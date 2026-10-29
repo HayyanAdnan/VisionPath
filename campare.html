@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+  <title>Compare Careers – VisionPath</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    /* ── ROOT VARIABLES ── */
+    :root {
+      --purple: #7C3AED;
+      --purple-light: #A78BFA;
+      --purple-pale: #EDE9FE;
+      --purple-bg: #F5F3FF;
+      --white: #FFFFFF;
+      --navy: #1E1040;
+      --dark: #2D2547;
+      --gray: #6B7280;
+      --light-gray: #F9FAFB;
+      --border: #E5E0F8;
+      --green: #10B981;
+      --blue: #3B82F6;
+      --orange: #F59E0B;
+      --radius: 16px;
+      --radius-lg: 24px;
+      --shadow: 0 4px 24px rgba(124, 58, 237, 0.10);
+      --shadow-md: 0 8px 40px rgba(124, 58, 237, 0.18);
+      --font-body: 'Poppins', sans-serif;
+      --font-display: 'Poppins', sans-serif;
+      --bg-body: #FFFFFF;
+      --text-body: #2D2547;
+      --card-bg: #FFFFFF;
+      --border-light: #E5E0F8;
+      --text-muted: #6B7280;
+      --bg-hero: linear-gradient(155deg, #FDFCFF 0%, #F0ECFF 50%, #EAE3FF 100%);
+      --footer-bg: #0C0720;
+      --footer-text: rgba(255, 255, 255, 0.75);
+    }
+
+    [data-theme="dark"] {
+      --bg-body: #0F0A1A;
+      --text-body: #E5E0F8;
+      --card-bg: #1A1230;
+      --border-light: #2D1F4A;
+      --text-muted: #A8A0C8;
+      --bg-hero: linear-gradient(155deg, #120C20 0%, #1A1230 50%, #221A3A 100%);
+      --purple-pale: rgba(124,58,237,0.2);
+      --light-gray: #1A1230;
+      --footer-bg: #0A0618;
+      --footer-text: rgba(255, 255, 255, 0.65);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-body);
+      color: var(--text-body);
+      transition: background 0.3s, color 0.3s;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--bg-body);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 0 1.5rem;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0; }
+    .logo-icon {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--purple), var(--purple-light));
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 14px rgba(124,58,237,0.35);
+      flex-shrink: 0;
+    }
+    .logo-icon svg { position: relative; z-index: 1; width: 20px; height: 20px; }
+    .logo-text strong { display: block; font-weight: 800; font-size: 1rem; color: var(--text-body); }
+    .logo-text span { font-size: 0.65rem; color: var(--purple); font-weight: 600; text-transform: uppercase; }
+    
+    .nav-links {
+      display: flex; align-items: center; gap: 1.8rem; list-style: none; flex-wrap: nowrap;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--text-body); font-size: 0.85rem; font-weight: 600;
+      position: relative; padding-bottom: 3px; white-space: nowrap;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+      background: var(--purple); transition: width .25s;
+    }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-links a:hover, .nav-links a.active { color: var(--purple); }
+    
+    .nav-actions {
+      display: flex; align-items: center; gap: 8px; flex-shrink: 0;
+    }
+    .btn-outline {
+      padding: 8px 16px; border: 1.5px solid var(--purple); border-radius: 8px;
+      background: transparent; font-size: 0.8rem; font-weight: 700;
+      color: var(--purple); cursor: pointer; transition: all .2s;
+      text-decoration: none; white-space: nowrap; font-family: var(--font-body);
+    }
+    .btn-outline:hover { background: var(--purple); color: white; }
+    .btn-primary {
+      padding: 8px 16px; background: var(--purple); border: none; border-radius: 8px;
+      font-size: 0.8rem; font-weight: 700; color: white; cursor: pointer;
+      transition: all .2s; text-decoration: none; white-space: nowrap;
+      font-family: var(--font-body); box-shadow: 0 4px 14px rgba(124,58,237,0.30);
+    }
+    .btn-primary:hover { background: #6D28D9; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(124,58,237,0.38); }
+    
+    .theme-toggle {
+      background: none; border: 1.5px solid var(--border-light); border-radius: 50%;
+      width: 38px; height: 38px; cursor: pointer; font-size: 1rem;
+      color: var(--text-body); transition: all .3s;
+      flex-shrink: 0;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+    }
+    .theme-toggle:hover { background: var(--purple-pale); border-color: var(--purple); }
+    
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      padding: 4px; background: none; border: none;
+      flex-shrink: 0;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2.5px;
+      background: var(--text-body); border-radius: 2px; transition: all .3s;
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+    
+    .mobile-menu {
+      display: none; position: fixed; top: 70px; left: 0; right: 0;
+      background: var(--bg-body); z-index: 199; padding: 1.5rem 2rem;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1); flex-direction: column; gap: 0.6rem;
+      border-top: 2px solid var(--purple-pale); max-height: 80vh; overflow-y: auto;
+    }
+    .mobile-menu.open { display: flex; animation: fadeUp .25s ease; }
+    .mobile-menu a {
+      text-decoration: none; color: var(--text-body); font-size: 1rem; font-weight: 600;
+      padding: 0.7rem 0; border-bottom: 1px solid var(--border-light);
+    }
+    .mobile-menu a:hover { color: var(--purple); }
+    .mobile-menu .mobile-btns { display: flex; gap: 10px; padding-top: 1rem; flex-wrap: wrap; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 992px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-actions .theme-toggle { display: flex !important; }
+      .nav-actions .nav-auth-group { display: none; }
+      nav { padding: 0 1.2rem; }
+    }
+    @media (max-width: 480px) {
+      nav { padding: 0 0.8rem; }
+      .logo-text strong { font-size: 0.85rem; }
+      .logo-text span { font-size: 0.55rem; }
+      .logo-icon { width: 34px; height: 34px; }
+      .logo-icon svg { width: 16px; height: 16px; }
+      .theme-toggle { width: 34px; height: 34px; font-size: 0.9rem; }
+      .hamburger span { width: 20px; height: 2px; }
+      .btn-outline { padding: 6px 12px; font-size: 0.7rem; }
+      .btn-primary { padding: 6px 12px; font-size: 0.7rem; }
+    }
+
+    /* ── hero ── */
+    .compare-hero {
+      background: var(--bg-hero);
+      padding: 3rem 2rem 2rem;
+      transition: background 0.3s;
+    }
+    .compare-hero h1 {
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      font-weight: 800;
+      color: var(--text-body);
+    }
+    .compare-hero p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin-top: 0.4rem;
+      font-size: 0.95rem;
+    }
+    .section-badge {
+      display: inline-block;
+      background: var(--purple-pale);
+      color: var(--purple);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    @media (max-width: 480px) {
+      .compare-hero { padding: 2rem 1.2rem 1.5rem; }
+      .compare-hero p { font-size: 0.85rem; }
+    }
+
+    /* ── controls ── */
+    .controls {
+      padding: 1rem 2rem;
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      align-items: center;
+      background: var(--bg-body);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .search-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 150px;
+      max-width: 320px;
+    }
+    .search-wrap i {
+      position: absolute; left: 12px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+    .search-wrap input {
+      width: 100%;
+      padding: 8px 12px 8px 34px;
+      border: 1.5px solid var(--border-light);
+      border-radius: 12px;
+      background: var(--card-bg);
+      color: var(--text-body);
+      font-size: 0.85rem;
+      font-family: var(--font-body);
+    }
+    .search-wrap input:focus { outline: none; border-color: var(--purple); }
+    .selected-count {
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+      font-size: 0.85rem;
+    }
+    .selected-count span { color: var(--purple); font-weight: 800; }
+    .controls .btn-primary { padding: 7px 16px; border-radius: 30px; font-size: 0.8rem; }
+    @media (max-width: 640px) {
+      .controls { padding: 0.8rem 1.2rem; gap: 0.6rem; flex-direction: column; align-items: stretch; }
+      .search-wrap { max-width: 100%; min-width: unset; }
+      .selected-count { text-align: center; font-size: 0.8rem; }
+      .controls .btn-primary { width: 100%; justify-content: center; }
+    }
+
+    /* ── PAGINATION ── */
+    .pagination-wrapper {
+      padding: 0.6rem 2rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .pagination-info {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .pagination-info span {
+      color: var(--purple);
+      font-weight: 700;
+    }
+    .pagination-btns {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .page-btn {
+      padding: 4px 10px;
+      border: 1.5px solid var(--border-light);
+      border-radius: 6px;
+      background: var(--card-bg);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: var(--font-body);
+      min-width: 30px;
+      text-align: center;
+    }
+    .page-btn:hover { border-color: var(--purple); color: var(--purple); }
+    .page-btn.active { background: var(--purple); color: white; border-color: var(--purple); }
+    .page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    @media (max-width: 992px) {
+      .pagination-wrapper { padding: 0.6rem 1.5rem 1rem; flex-direction: column; align-items: stretch; }
+      .pagination-btns { justify-content: center; }
+      .pagination-info { text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .pagination-wrapper { padding: 0.4rem 1.2rem 0.8rem; }
+      .page-btn { padding: 3px 7px; font-size: 0.65rem; min-width: 26px; }
+      .pagination-info { font-size: 0.7rem; }
+    }
+
+    /* ── compare grid ── */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      padding: 0.5rem 2rem 1.5rem;
+      flex: 1;
+      width: 100%;
+    }
+    .compare-card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 1rem 0.9rem;
+      transition: all 0.25s;
+      position: relative;
+      cursor: pointer;
+    }
+    .compare-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .compare-card.selected { border-color: var(--purple); background: var(--purple-pale); }
+    .compare-card .top-badge {
+      position: absolute; top: -1px; right: 12px;
+      background: var(--purple); color: white;
+      padding: 2px 10px; border-radius: 0 0 12px 12px;
+      font-size: 0.6rem; font-weight: 700;
+    }
+    .card-title {
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--text-body);
+      margin-bottom: 0.2rem;
+    }
+    .card-category {
+      font-size: 0.65rem; color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .card-detail {
+      display: flex; justify-content: space-between;
+      font-size: 0.72rem; padding: 2px 0;
+      border-bottom: 1px dashed var(--border-light);
+    }
+    .card-detail:last-child { border-bottom: none; }
+    .card-detail .label { color: var(--text-muted); }
+    .card-detail .value { font-weight: 600; color: var(--text-body); }
+    .select-btn {
+      margin-top: 0.6rem;
+      width: 100%;
+      padding: 5px 0;
+      border: 1.5px solid var(--border-light);
+      border-radius: 30px;
+      background: transparent;
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: var(--font-body);
+    }
+    .compare-card.selected .select-btn {
+      background: var(--purple);
+      color: white;
+      border-color: var(--purple);
+    }
+    .select-btn:hover { background: var(--purple-pale); border-color: var(--purple); }
+    @media (max-width: 992px) {
+      .compare-grid { padding: 0.5rem 1.5rem 1.2rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.8rem; }
+    }
+    @media (max-width: 640px) {
+      .compare-grid { padding: 0.5rem 1.2rem 1rem; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+      .compare-card { padding: 0.7rem 0.6rem; }
+      .card-title { font-size: 0.8rem; }
+      .card-detail { font-size: 0.65rem; padding: 2px 0; }
+      .select-btn { font-size: 0.65rem; padding: 4px 0; }
+    }
+    @media (max-width: 420px) {
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── comparison table ── */
+    .comparison-wrapper {
+      padding: 0 2rem 2.5rem;
+      scroll-margin-top: 80px;
+      width: 100%;
+    }
+    .comparison-table-wrap {
+      overflow-x: auto;
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow);
+      width: 100%;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      min-width: 500px;
+    }
+    .comparison-table th {
+      background: var(--purple-pale);
+      color: var(--purple);
+      font-weight: 700;
+      padding: 10px 8px;
+      text-align: left;
+      border-bottom: 2px solid var(--border-light);
+    }
+    .comparison-table td {
+      padding: 8px 8px;
+      border-bottom: 1px solid var(--border-light);
+      vertical-align: middle;
+    }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table .career-name {
+      font-weight: 700;
+      color: var(--text-body);
+    }
+    .comparison-table .career-category {
+      font-size: 0.6rem;
+      color: var(--text-muted);
+    }
+    .empty-comparison {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+    }
+    .empty-comparison i { font-size: 2.2rem; margin-bottom: 0.8rem; opacity: 0.5; }
+    .empty-comparison h3 { color: var(--text-body); font-size: 1.1rem; }
+    .empty-comparison p { color: var(--text-muted); font-size: 0.85rem; }
+    @media (max-width: 992px) {
+      .comparison-wrapper { padding: 0 1.5rem 2rem; }
+      .comparison-table { font-size: 0.75rem; min-width: 420px; }
+      .comparison-table th, .comparison-table td { padding: 6px 6px; }
+    }
+    @media (max-width: 640px) {
+      .comparison-wrapper { padding: 0 1.2rem 1.5rem; }
+      .comparison-table { font-size: 0.65rem; min-width: 360px; }
+      .comparison-table th, .comparison-table td { padding: 5px 5px; }
+      .comparison-table .career-name { font-size: 0.7rem; }
+      .empty-comparison { padding: 1.5rem 0.5rem; }
+      .empty-comparison h3 { font-size: 0.95rem; }
+      .empty-comparison p { font-size: 0.75rem; }
+    }
+    @media (max-width: 420px) {
+      .comparison-table { font-size: 0.6rem; min-width: 300px; }
+    }
+
+    /* toast */
+    #toast {
+      position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+      background: #1e1b4b; color: white; padding: 8px 18px;
+      border-radius: 40px; font-weight: 600; font-size: 0.85rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      z-index: 999; opacity: 0; transition: opacity 0.3s;
+      pointer-events: none; max-width: 90%; white-space: nowrap;
+    }
+    #toast.show { opacity: 1; }
+    @media (max-width: 480px) {
+      #toast { font-size: 0.7rem; padding: 6px 14px; bottom: 1rem; white-space: normal; }
+    }
+
+    /* ══ FOOTER ══ */
+    footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 2.5rem 2rem 1.5rem;
+      transition: background 0.3s, color 0.3s;
+      flex-shrink: 0;
+      margin-top: auto;
+      width: 100%;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 1.8rem;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      margin-bottom: 0.8rem;
+    }
+    .footer-brand .logo-icon { width: 36px; height: 36px; border-radius: 10px; }
+    .footer-brand .logo-icon svg { width: 18px; height: 18px; }
+    .footer-brand .logo-text strong { color: white; font-size: 0.95rem; }
+    .footer-brand .logo-text span { color: var(--purple-light); }
+    .footer-brand p {
+      font-size: 0.78rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.60);
+      margin-bottom: 0.8rem;
+      max-width: 260px;
+    }
+    .social-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.70);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      text-decoration: none;
+      transition: all .2s;
+    }
+    .social-links a:hover {
+      background: var(--purple);
+      color: white;
+      transform: translateY(-2px);
+    }
+    .footer-col h5 {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 0.8rem;
+      letter-spacing: .3px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+    .footer-col ul li a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.75rem;
+      transition: color .2s;
+    }
+    .footer-col ul li a:hover {
+      color: var(--purple-light);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.40);
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .footer-legal {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .footer-legal a {
+      color: rgba(255, 255, 255, 0.40);
+      text-decoration: none;
+      transition: color .2s;
+      font-size: 0.7rem;
+    }
+    .footer-legal a:hover {
+      color: var(--purple-light);
+    }
+
+    @media (max-width: 1200px) {
+      .footer-top { gap: 1.5rem; }
+    }
+    @media (max-width: 992px) {
+      footer { padding: 2rem 1.5rem 1.2rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    }
+    @media (max-width: 640px) {
+      footer { padding: 1.5rem 1.2rem 1rem; }
+      .footer-top { grid-template-columns: 1fr; gap: 1rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-legal { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      footer { padding: 1rem 0.8rem 0.8rem; }
+      .footer-brand p { font-size: 0.7rem; }
+      .social-links a { width: 28px; height: 28px; font-size: 0.65rem; }
+      .footer-col h5 { font-size: 0.7rem; }
+      .footer-col ul li a { font-size: 0.65rem; }
+      .footer-bottom { font-size: 0.6rem; }
+    }
+  
+    /* ============================================
+       RESPONSIVE HARDENING PATCH (added)
+       Nothing above this point was removed or changed.
+    ============================================ */
+
+    /* --- FIX: navbar overlaps/breaks between ~993px and ~1300px
+       because the full desktop nav (9 links + auth buttons) needs
+       more room than the old 992px cutoff gave it. Switch to the
+       mobile hamburger menu earlier, before it has a chance to
+       overlap, using the SAME classes the page already defines. --- */
+    @media (max-width: 1300px) {
+      .nav-links,
+      .nav-actions .nav-auth-group {
+        display: none !important;
+      }
+      .hamburger {
+        display: flex !important;
+      }
+      .nav-actions .theme-toggle {
+        display: flex !important;
+      }
+      /* FIX: nav uses justify-content:space-between across its 3
+         top-level children (logo, nav-actions, hamburger). With
+         nav-links removed from flow, that space-between pushed the
+         moon button into the middle of the bar, away from the
+         hamburger. Pull nav-actions + hamburger together as one
+         right-aligned group instead. */
+      .nav-actions {
+        margin-left: auto;
+        gap: 10px;
+      }
+      .hamburger {
+        margin-left: 10px;
+      }
+    }
+
+    /* --- General safety net so media, tables, and form controls
+       never force horizontal scrolling on any device. --- */
+    img, video, iframe, embed, object {
+      max-width: 100%;
+      height: auto;
+    }
+    table {
+      max-width: 100%;
+    }
+    input, select, textarea, button {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    pre, code {
+      overflow-x: auto;
+    }
+
+    /* --- Fine-tuning for tablets in the 993-1300px gap so spacing
+       still feels intentional now that the mobile menu is active
+       there (mirrors the page's own >=992px mobile styling). --- */
+    @media (max-width: 1300px) and (min-width: 993px) {
+      nav { padding: 0 1.5rem; }
+    }
+
+    /* --- Extra fine-tuning for very small phones --- */
+    @media (max-width: 400px) {
+      [class*="hero-title"],
+      [class*="page-title"] {
+        font-size: clamp(1.3rem, 7.5vw, 1.6rem) !important;
+        line-height: 1.25 !important;
+      }
+      [class*="section-title"] {
+        font-size: clamp(1.15rem, 6vw, 1.35rem) !important;
+      }
+      [class*="hero-desc"],
+      [class*="hero-sub"],
+      [class*="page-sub"] {
+        font-size: 0.82rem !important;
+      }
+    }
+
+    @media (max-width: 340px) {
+      [class*="hero-title"],
+      [class*="page-title"] {
+        font-size: 1.25rem !important;
+      }
+      body {
+        font-size: 0.92rem;
+      }
+    }
+
+  
+    /* --- FIX: theme-toggle (moon/sun) button was a fixed 38px
+       circle at every screen size. Scale it down in step with the
+       rest of the nav on smaller screens, and guarantee the icon
+       glyph stays perfectly centered at every size. --- */
+    .theme-toggle {
+      line-height: 1;
+    }
+    .theme-toggle i,
+    #themeIcon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1em;
+      height: 1em;
+    }
+    @media (max-width: 480px) {
+      .theme-toggle {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.85rem !important;
+      }
+    }
+    @media (max-width: 340px) {
+      .theme-toggle {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.75rem !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L8 8H3l4 4-2 6 7-4 7 4-2-6 4-4h-5L12 2z" fill="white" opacity=".9"/>
+        <circle cx="12" cy="12" r="2.5" fill="white"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <strong>VisionPath</strong>
+      <span>Compare Careers</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="skills.html">Top Skills</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="Roadmap.html">Roadmap</a></li>
+    <li><a href="index.html#resources">Resources</a></li>
+    <li><a href="index.html#institutes">Institutes</a></li>
+    <li><a href="campare.html" class="active">Compare Careers</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Support</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+    <span id="navLoggedOut" class="nav-auth-group">
+      <a href="login.php" class="btn-outline">Log In</a>
+      <a href="register.php" class="btn-primary">Get Started</a>
+    </span>
+    <span id="navLoggedIn" class="nav-auth-group" style="display:none;">
+      <a href="logout.php" class="btn-outline" style="color:#DC2626; border-color:#DC2626;">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </a>
+    </span>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="skills.html">Top Skills</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="Roadmap.html">Roadmap</a>
+  <a href="index.html#resources">Resources</a>
+  <a href="index.html#institutes">Institutes in Pakistan</a>
+  <a href="campare.html">Compare Careers</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Support</a>
+  <div class="mobile-btns" id="navLoggedOutMobile">
+    <a href="login.php" class="btn-outline" style="flex:1;text-align:center;padding:11px;">Log In</a>
+    <a href="register.php" class="btn-primary" style="flex:1;text-align:center;padding:11px;">Get Started</a>
+  </div>
+  <div class="mobile-btns" id="navLoggedInMobile" style="display:none;">
+    <a href="logout.php" class="btn-outline" style="flex:1;text-align:center;padding:11px;color:#DC2626;border-color:#DC2626;">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </a>
+  </div>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="compare-hero">
+  <div class="section-badge"><i class="fas fa-arrows-left-right"></i> Compare</div>
+  <h1>Find Your Best Career Match</h1>
+  <p>Select two careers from our database of <strong id="totalCareerCount">0</strong> roles and compare salary, growth, difficulty, learning time & more.</p>
+</section>
+
+<!-- ══ CONTROLS ══ -->
+<div class="controls">
+  <div class="search-wrap">
+    <i class="fas fa-search"></i>
+    <input type="text" id="searchInput" placeholder="Search careers..." oninput="onSearch()">
+  </div>
+  <div class="selected-count">Selected: <span id="selectedCount">0</span> / 2</div>
+  <button class="btn-primary" onclick="clearAll()">
+    <i class="fas fa-times"></i> Clear all
+  </button>
+</div>
+
+<!-- ══ PAGINATION (TOP) ══ -->
+<div class="pagination-wrapper" id="paginationTop">
+  <div class="pagination-info">Showing <span id="startRange">1</span>–<span id="endRange">12</span> of <span id="totalCareers">0</span> careers</div>
+  <div class="pagination-btns" id="paginationBtnsTop"></div>
+</div>
+
+<!-- ══ CAREER GRID ══ -->
+<div class="compare-grid" id="compareGrid"></div>
+
+<!-- ══ PAGINATION (BOTTOM) ══ -->
+<div class="pagination-wrapper" id="paginationBottom">
+  <div class="pagination-info">Showing <span id="startRangeB">1</span>–<span id="endRangeB">12</span> of <span id="totalCareersB">0</span> careers</div>
+  <div class="pagination-btns" id="paginationBtnsBottom"></div>
+</div>
+
+<!-- ══ COMPARISON TABLE ══ -->
+<div class="comparison-wrapper" id="comparisonSection">
+  <div class="comparison-table-wrap" id="comparisonTableWrap">
+    <div class="empty-comparison">
+      <i class="fas fa-chart-simple"></i>
+      <h3>Select two careers to compare</h3>
+      <p>Pick two careers from the grid above to see a side-by-side comparison.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TOAST ══ -->
+<div id="toast"></div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="logo-wrap">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L8 8H3l4 4-2 6 7-4 7 4-2-6 4-4h-5L12 2z" fill="white" opacity=".9"/>
+            <circle cx="12" cy="12" r="2.5" fill="white"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <strong>VisionPath</strong>
+          <span>Discover · Learn · Lead</span>
+        </div>
+      </a>
+      <p>Pakistan's #1 platform for discovering in-demand tech skills and the best places to learn them — online or in person.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="skills.html">Top Skills</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#institutes">Institutes in Pakistan</a></li>
+        <li><a href="index.html#resources">Learning Resources</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Learn</h5>
+      <ul>
+        <li><a href="#">YouTube Channels</a></li>
+        <li><a href="#">Online Platforms</a></li>
+        <li><a href="#">Free Resources</a></li>
+        <li><a href="Roadmap.html">Career Roadmaps</a></li>
+        <li><a href="#">Skill Assessments</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#">Salary Trends</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div>© 2025 VisionPath. Made with <i class="fas fa-heart" style="color:#A78BFA;"></i> for students of Pakistan.</div>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Accessibility</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Theme ──
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeIcon.className = 'fas fa-sun';
+  }
+  themeToggle.addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    themeIcon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  });
+
+  // ── Mobile menu ──
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+      });
+    });
+  }
+
+  // ── DATA ──
+  let allCareers = [];
+  let selectedCareers = [];
+  let filteredCareers = [];
+  let currentPage = 1;
+  const itemsPerPage = 12;
+
+  // ── Generate fallback careers ──
+  function generateFallbackCareers(count = 1500) {
+    const titles = [
+      'Software Engineer', 'Data Scientist', 'Web Developer', 'AI Engineer', 
+      'Cybersecurity Analyst', 'Cloud Architect', 'DevOps Engineer', 'Product Manager',
+      'UX/UI Designer', 'Business Analyst', 'Machine Learning Engineer', 'Full Stack Developer',
+      'Frontend Developer', 'Backend Developer', 'Mobile Developer', 'Database Administrator',
+      'Network Engineer', 'Systems Administrator', 'IT Support Specialist', 'QA Engineer',
+      'Automation Engineer', 'Blockchain Developer', 'Game Developer', 'AR/VR Developer',
+      'IoT Engineer', 'Embedded Systems Engineer', 'Site Reliability Engineer', 'Data Engineer',
+      'Analytics Engineer', 'Business Intelligence Developer', 'Doctor', 'Nurse', 'Dentist',
+      'Pharmacist', 'Psychologist', 'Physical Therapist', 'Veterinarian', 'Teacher', 'Professor',
+      'Accountant', 'Financial Analyst', 'Marketing Manager', 'HR Manager', 'Lawyer',
+      'Architect', 'Civil Engineer', 'Mechanical Engineer', 'Electrical Engineer', 'Graphic Designer',
+      'Content Writer', 'Video Editor', 'Photographer', 'Music Producer', 'Film Director',
+      'Chef', 'Restaurant Manager', 'Hotel Manager', 'Event Planner', 'Real Estate Agent',
+      'Construction Manager', 'Electrician', 'Plumber', 'Carpenter', 'Welder',
+      'Mechanic', 'Pilot', 'Flight Attendant', 'Air Traffic Controller', 'Train Engineer',
+      'Social Worker', 'Psychiatrist', 'Occupational Therapist', 'Speech Therapist', 'Audiologist',
+      'Optometrist', 'Biomedical Engineer', 'Chemical Engineer', 'Aerospace Engineer',
+      'Environmental Scientist', 'Geologist', 'Meteorologist', 'Astronomer', 'Physicist',
+      'Chemist', 'Biologist', 'Marine Biologist', 'Zoologist', 'Botanist',
+      'Forensic Scientist', 'Geneticist', 'Immunologist', 'Microbiologist', 'Biochemist',
+      'Toxicologist', 'Epidemiologist', 'Public Health Specialist', 'Health Educator', 'Nutritionist',
+      'Dietitian', 'Fitness Trainer', 'Yoga Instructor', 'Dance Instructor', 'Music Teacher'
+    ];
+    
+    const categories = ['Technology', 'Technology', 'Technology', 'Technology', 'Technology', 
+      'Technology', 'Technology', 'Business', 'Design', 'Business', 'Technology', 'Technology',
+      'Technology', 'Technology', 'Technology', 'Technology', 'Technology', 'Technology',
+      'Technology', 'Technology', 'Technology', 'Technology', 'Technology', 'Technology',
+      'Technology', 'Technology', 'Technology', 'Technology', 'Technology', 'Technology',
+      'Healthcare', 'Healthcare', 'Healthcare', 'Healthcare', 'Healthcare', 'Healthcare',
+      'Healthcare', 'Education', 'Education', 'Business', 'Business', 'Business', 'Business',
+      'Law', 'Design', 'Engineering', 'Engineering', 'Engineering', 'Design', 'Design',
+      'Design', 'Design', 'Design', 'Design', 'Business', 'Business', 'Business', 'Business',
+      'Business', 'Engineering', 'Engineering', 'Engineering', 'Engineering', 'Engineering',
+      'Engineering', 'Business', 'Business', 'Business', 'Business', 'Healthcare',
+      'Healthcare', 'Healthcare', 'Healthcare', 'Healthcare', 'Healthcare', 'Engineering',
+      'Engineering', 'Engineering', 'Science', 'Science', 'Science', 'Science', 'Science',
+      'Science', 'Science', 'Science', 'Science', 'Science', 'Science', 'Science',
+      'Healthcare', 'Healthcare', 'Healthcare', 'Healthcare', 'Healthcare', 'Healthcare',
+      'Healthcare', 'Healthcare', 'Healthcare', 'Business', 'Business', 'Business', 'Business',
+      'Education', 'Design', 'Design', 'Design', 'Design', 'Design'];
+    
+    const skillsList = [
+      ['JavaScript', 'React', 'Node.js', 'SQL'],
+      ['Python', 'R', 'Statistics', 'Machine Learning'],
+      ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+      ['Python', 'TensorFlow', 'PyTorch', 'Deep Learning'],
+      ['Network Security', 'Firewall', 'SIEM', 'Penetration Testing'],
+      ['AWS', 'Azure', 'GCP', 'Terraform'],
+      ['Docker', 'Kubernetes', 'CI/CD', 'Jenkins'],
+      ['Product Strategy', 'Agile', 'Analytics', 'User Research'],
+      ['Figma', 'Sketch', 'Adobe XD', 'Prototyping'],
+      ['SQL', 'Excel', 'Tableau', 'Data Visualization'],
+      ['Python', 'Scikit-learn', 'MLflow', 'Data Engineering'],
+      ['JavaScript', 'React', 'Node.js', 'MongoDB'],
+      ['JavaScript', 'CSS', 'HTML', 'Performance Optimization'],
+      ['Python', 'Java', 'SQL', 'Microservices'],
+      ['Swift', 'Kotlin', 'React Native', 'Flutter'],
+      ['SQL', 'Oracle', 'PostgreSQL', 'Performance Tuning'],
+      ['TCP/IP', 'Routing', 'Switching', 'Network Security'],
+      ['Linux', 'Windows Server', 'Active Directory', 'Automation'],
+      ['Troubleshooting', 'Customer Service', 'Windows', 'Mac OS'],
+      ['Automated Testing', 'Selenium', 'JUnit', 'CI/CD'],
+      ['Python', 'Automation', 'Scripting', 'DevOps'],
+      ['Solidity', 'Ethereum', 'Smart Contracts', 'Web3.js'],
+      ['Unity', 'C#', 'Game Design', 'C++'],
+      ['Unity', 'C#', 'AR/VR', 'Spatial Computing'],
+      ['C++', 'Python', 'IoT', 'Microcontrollers'],
+      ['C', 'C++', 'Embedded Systems', 'RTOS'],
+      ['Kubernetes', 'Prometheus', 'Grafana', 'SRE'],
+      ['Python', 'Spark', 'SQL', 'Data Pipelines'],
+      ['SQL', 'dbt', 'Data Modeling', 'Analytics'],
+      ['Tableau', 'Power BI', 'SQL', 'Data Warehousing']
+    ];
+    
+    const careers = [];
+    const total = Math.max(count, 1500);
+    
+    for (let i = 0; i < total; i++) {
+      const idx = i % titles.length;
+      const title = titles[idx];
+      const cat = categories[idx % categories.length] || 'General';
+      const skillsIdx = i % skillsList.length;
+      const skills = skillsList[skillsIdx] || ['Communication', 'Teamwork', 'Problem Solving'];
+      
+      const low = 45000 + (i * 1200) % 65000;
+      const high = low + 35000 + (i * 1800) % 55000;
+      
+      careers.push({
+        id: i + 1,
+        title: title + ' ' + (Math.floor(i / titles.length) + 1),
+        category: cat,
+        salary_range_low: Math.round(low),
+        salary_range_high: Math.round(high),
+        growth_rate: Math.round(5 + (i * 1.2) % 45),
+        ai_replacement_risk: ['low', 'medium', 'low', 'medium', 'high'][i % 5],
+        skills: skills,
+        education: ["Bachelor's Degree", "Master's Degree", "Bachelor's Degree", "PhD", "Associate's Degree"][i % 5],
+        match_score: Math.round(45 + (i * 1.5) % 50)
+      });
+    }
+    return careers;
+  }
+
+  function getDerived(career) {
+    const skillCount = (career.skills || []).length;
+    let diff = 'Medium';
+    if (skillCount > 5 || career.education?.includes('PhD') || career.education?.includes('Doctorate')) diff = 'Hard';
+    else if (skillCount <= 3 && !career.education?.includes('Master')) diff = 'Easy';
+    let learnTime = diff === 'Hard' ? 18 : diff === 'Medium' ? 10 : 5;
+    if (career.title?.toLowerCase().includes('ai') || career.title?.toLowerCase().includes('machine')) learnTime += 6;
+    if (career.title?.toLowerCase().includes('cloud')) learnTime += 4;
+    if (career.title?.toLowerCase().includes('doctor') || career.title?.toLowerCase().includes('surgeon')) learnTime += 24;
+    if (career.title?.toLowerCase().includes('lawyer')) learnTime += 12;
+    if (career.title?.toLowerCase().includes('dentist')) learnTime += 8;
+    const low = career.salary_range_low || 50000;
+    const high = career.salary_range_high || 100000;
+    const mid = Math.round((low + high) / 2);
+    const senior = Math.round(high * 1.35);
+    return { difficulty: diff, learningTime: learnTime, midSalary: mid, seniorSalary: senior };
+  }
+
+  function scrollToComparison() {
+    const el = document.getElementById('comparisonSection');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function onSearch() {
+    const search = document.getElementById('searchInput').value.toLowerCase().trim();
+    if (search === '') {
+      filteredCareers = [...allCareers];
+    } else {
+      filteredCareers = allCareers.filter(c =>
+        c.title.toLowerCase().includes(search) ||
+        (c.category || '').toLowerCase().includes(search)
+      );
+    }
+    currentPage = 1;
+    renderGrid();
+    renderPagination();
+  }
+
+  function renderGrid() {
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = Math.min(start + itemsPerPage, filteredCareers.length);
+    const pageItems = filteredCareers.slice(start, end);
+    const grid = document.getElementById('compareGrid');
+    
+    if (pageItems.length === 0) {
+      grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:2rem;color:var(--text-muted);">
+        <div style="font-size:2.2rem;margin-bottom:0.8rem;">🔍</div>
+        <h3 style="color:var(--text-body);font-size:1rem;">No careers found</h3>
+        <p style="font-size:0.85rem;">Try adjusting your search terms.</p>
+      </div>`;
+      return;
+    }
+
+    grid.innerHTML = pageItems.map(c => {
+      const sel = selectedCareers.some(s => s.id === c.id);
+      const d = getDerived(c);
+      const riskLabel = { low:'Low', medium:'Medium', high:'High' }[c.ai_replacement_risk] || 'Medium';
+      return `
+        <div class="compare-card ${sel ? 'selected' : ''}" onclick="toggleCareer(${c.id})">
+          ${sel ? '<div class="top-badge">✓ Selected</div>' : ''}
+          <div class="card-title">${c.title}</div>
+          <div class="card-category"><i class="fas fa-tag"></i> ${c.category || 'General'}</div>
+          <div class="card-detail"><span class="label">💰 Starting</span><span class="value">$${c.salary_range_low || '—'}</span></div>
+          <div class="card-detail"><span class="label">📈 Growth</span><span class="value">${c.growth_rate || 0}%</span></div>
+          <div class="card-detail"><span class="label">⚡ Difficulty</span><span class="value">${d.difficulty}</span></div>
+          <div class="card-detail"><span class="label">⏱️ Learning</span><span class="value">${d.learningTime}m</span></div>
+          <div class="card-detail"><span class="label">🤖 AI Risk</span><span class="value">${riskLabel}</span></div>
+          <button class="select-btn" onclick="event.stopPropagation(); toggleCareer(${c.id})">
+            ${sel ? 'Remove' : 'Compare'}
+          </button>
+        </div>
+      `;
+    }).join('');
+
+    updateSelectedCount();
+    renderComparisonTable();
+    updatePaginationInfo();
+  }
+
+  function renderPagination() {
+    const totalPages = Math.max(1, Math.ceil(filteredCareers.length / itemsPerPage));
+    const maxVisible = 5;
+    let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+    let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+    if (endPage - startPage < maxVisible - 1) {
+      startPage = Math.max(1, endPage - maxVisible + 1);
+    }
+
+    const renderBtns = (containerId) => {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      
+      let html = '';
+      
+      html += `<button class="page-btn" onclick="goToPage(${currentPage - 1})" ${currentPage <= 1 ? 'disabled' : ''}>
+        <i class="fas fa-chevron-left"></i>
+      </button>`;
+
+      if (startPage > 1) {
+        html += `<button class="page-btn" onclick="goToPage(1)">1</button>`;
+        if (startPage > 2) html += `<span class="page-btn" style="border:none;cursor:default;padding:0 4px;">…</span>`;
+      }
+
+      for (let i = startPage; i <= endPage; i++) {
+        html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+      }
+
+      if (endPage < totalPages) {
+        if (endPage < totalPages - 1) html += `<span class="page-btn" style="border:none;cursor:default;padding:0 4px;">…</span>`;
+        html += `<button class="page-btn" onclick="goToPage(${totalPages})">${totalPages}</button>`;
+      }
+
+      html += `<button class="page-btn" onclick="goToPage(${currentPage + 1})" ${currentPage >= totalPages ? 'disabled' : ''}>
+        <i class="fas fa-chevron-right"></i>
+      </button>`;
+
+      container.innerHTML = html;
+    };
+
+    renderBtns('paginationBtnsTop');
+    renderBtns('paginationBtnsBottom');
+    updatePaginationInfo();
+  }
+
+  function goToPage(page) {
+    const totalPages = Math.max(1, Math.ceil(filteredCareers.length / itemsPerPage));
+    if (page < 1 || page > totalPages) return;
+    currentPage = page;
+    renderGrid();
+    renderPagination();
+    document.getElementById('compareGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function updatePaginationInfo() {
+    const total = filteredCareers.length;
+    const start = total > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0;
+    const end = total > 0 ? Math.min(start + itemsPerPage - 1, total) : 0;
+    
+    document.getElementById('startRange').textContent = start;
+    document.getElementById('endRange').textContent = end;
+    document.getElementById('totalCareers').textContent = total;
+    document.getElementById('startRangeB').textContent = start;
+    document.getElementById('endRangeB').textContent = end;
+    document.getElementById('totalCareersB').textContent = total;
+  }
+
+  function toggleCareer(id) {
+    const career = allCareers.find(c => c.id === id);
+    if (!career) return;
+    const idx = selectedCareers.findIndex(s => s.id === id);
+    if (idx > -1) {
+      selectedCareers.splice(idx, 1);
+      showToast(`Removed ${career.title}`);
+    } else {
+      if (selectedCareers.length >= 2) {
+        showToast('You can compare up to 2 careers at a time.');
+        return;
+      }
+      selectedCareers.push(career);
+      showToast(`Added ${career.title}`);
+      if (selectedCareers.length === 2) {
+        setTimeout(scrollToComparison, 300);
+      }
+    }
+    renderGrid();
+  }
+
+  function clearAll() {
+    selectedCareers = [];
+    renderGrid();
+    showToast('Cleared all selections');
+  }
+
+  function updateSelectedCount() {
+    document.getElementById('selectedCount').textContent = selectedCareers.length;
+  }
+
+  function renderComparisonTable() {
+    const wrap = document.getElementById('comparisonTableWrap');
+    if (selectedCareers.length < 2) {
+      wrap.innerHTML = `
+        <div class="empty-comparison">
+          <i class="fas fa-chart-simple"></i>
+          <h3>Select two careers to compare</h3>
+          <p>Pick two careers from the grid above to see a side-by-side comparison.</p>
+        </div>
+      `;
+      return;
+    }
+
+    const [c1, c2] = selectedCareers;
+    const d1 = getDerived(c1);
+    const d2 = getDerived(c2);
+    c1.midSalary = d1.midSalary; c1.seniorSalary = d1.seniorSalary; c1.difficulty = d1.difficulty; c1.learningTime = d1.learningTime;
+    c2.midSalary = d2.midSalary; c2.seniorSalary = d2.seniorSalary; c2.difficulty = d2.difficulty; c2.learningTime = d2.learningTime;
+
+    const rows = [
+      { label: 'Category', key: 'category', format: v => v || '—' },
+      { label: 'Starting Salary', key: 'salary_range_low', format: v => `$${v || '—'}` },
+      { label: 'Mid-Level Salary', key: 'midSalary', format: v => `$${v || '—'}` },
+      { label: 'Senior Salary', key: 'seniorSalary', format: v => `$${v || '—'}` },
+      { label: 'Growth Rate', key: 'growth_rate', format: v => `${v || 0}%` },
+      { label: 'Difficulty', key: 'difficulty', format: v => v || '—' },
+      { label: 'Learning Time', key: 'learningTime', format: v => `${v || '—'} mo` },
+      { label: 'AI Risk', key: 'ai_replacement_risk', format: v => {
+        const map = { low:'🟢 Low', medium:'🟡 Medium', high:'🔴 High' };
+        return map[v] || v || '—';
+      } },
+      { label: 'Skills', key: 'skills', format: v => (v || []).slice(0,4).join(', ') + (v?.length > 4 ? '…' : '') },
+      { label: 'Education', key: 'education', format: v => v || '—' }
+    ];
+
+    let html = `<table class="comparison-table"><thead><tr><th>Metric</th>`;
+    html += `<th><div class="career-name">${c1.title}</div><div class="career-category">${c1.category || ''}</div></th>`;
+    html += `<th><div class="career-name">${c2.title}</div><div class="career-category">${c2.category || ''}</div></th>`;
+    html += `</tr></thead><tbody>`;
+
+    rows.forEach(row => {
+      html += `<tr><td><strong>${row.label}</strong></td>`;
+      html += `<td>${row.format(c1[row.key])}</td>`;
+      html += `<td>${row.format(c2[row.key])}</td>`;
+      html += `</tr>`;
+    });
+
+    html += `</tbody></table>`;
+    wrap.innerHTML = `<div class="comparison-table-wrap" style="overflow-x:auto; background:var(--card-bg); border-radius:var(--radius-lg); border:1px solid var(--border-light);">${html}</div>`;
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(t._hide);
+    t._hide = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  // ── Load careers: combine JSON with fallback to reach 1500+ ──
+  async function loadCareers() {
+    try {
+      let jsonData = [];
+      
+      try {
+        const response = await fetch('careers_1000.json');
+        if (response.ok) {
+          jsonData = await response.json();
+          console.log('Loaded JSON careers:', jsonData.length);
+        }
+      } catch (e) {
+        console.log('Could not load careers_1000.json, using fallback only');
+      }
+
+      if (jsonData.length < 1000) {
+        console.log('JSON has only', jsonData.length, 'careers, generating additional');
+        const fallback = generateFallbackCareers(1500);
+        
+        const existingIds = new Set(jsonData.map(c => c.id));
+        for (const c of fallback) {
+          if (!existingIds.has(c.id)) {
+            jsonData.push(c);
+          }
+        }
+        console.log('Total careers after merge:', jsonData.length);
+      }
+
+      allCareers = jsonData;
+      document.getElementById('totalCareerCount').textContent = allCareers.length;
+      filteredCareers = [...allCareers];
+      currentPage = 1;
+      renderGrid();
+      renderPagination();
+      
+    } catch (e) {
+      console.warn('Error loading careers, using full fallback', e);
+      allCareers = generateFallbackCareers(1500);
+      document.getElementById('totalCareerCount').textContent = allCareers.length;
+      filteredCareers = [...allCareers];
+      currentPage = 1;
+      renderGrid();
+      renderPagination();
+    }
+  }
+
+  // ── Init ──
+  loadCareers();
+</script>
+
+</body>
+</html>

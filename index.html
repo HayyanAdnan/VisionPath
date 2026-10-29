@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>VisionPath – Discover. Learn. Lead.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    /* ===== ROOT VARIABLES ===== */
+    :root {
+      --purple: #7C3AED;
+      --purple-mid: #8B5CF6;
+      --purple-light: #A78BFA;
+      --purple-pale: #EDE9FE;
+      --purple-bg: #F5F3FF;
+      --white: #FFFFFF;
+      --navy: #1E1040;
+      --dark: #2D2547;
+      --gray: #6B7280;
+      --light-gray: #F9FAFB;
+      --border: #E5E0F8;
+      --green: #10B981;
+      --blue: #3B82F6;
+      --orange: #F59E0B;
+      --pink: #EC4899;
+      --radius: 16px;
+      --radius-lg: 24px;
+      --shadow: 0 4px 24px rgba(124, 58, 237, 0.10);
+      --shadow-md: 0 8px 40px rgba(124, 58, 237, 0.18);
+      --shadow-lg: 0 16px 60px rgba(124, 58, 237, 0.22);
+      --font-display: 'Poppins', sans-serif;
+      --font-body: 'Poppins', sans-serif;
+      --bg-body: #FFFFFF;
+      --text-body: #2D2547;
+      --bg-nav: rgba(255, 255, 255, 0.92);
+      --bg-mobile: #FFFFFF;
+      --bg-hero: linear-gradient(155deg, #FDFCFF 0%, #F0ECFF 50%, #EAE3FF 100%);
+      --bg-features: linear-gradient(165deg, #F8F6FF 0%, #F0ECFF 100%);
+      --bg-how: #FFFFFF;
+      --bg-resources: linear-gradient(165deg, #0F0924 0%, #1E1040 100%);
+      --bg-institutes: #FFFFFF;
+      --bg-cta: linear-gradient(135deg, var(--purple) 0%, #6D28D9 40%, #4C1D95 100%);
+      --bg-footer: #0C0720;
+      --text-footer: #CBD5E1;
+      --border-light: var(--border);
+      --card-bg: #FFFFFF;
+      --card-shadow: var(--shadow);
+      --step-bg: var(--purple-bg);
+      --step-border: var(--border);
+      --trust-bg: #FFFFFF;
+      --text-muted: var(--gray);
+      --tag-bg: var(--purple-pale);
+      --tag-color: var(--purple);
+      --input-bg: #FFFFFF;
+      --input-border: var(--border);
+      --hover-bg: rgba(124, 58, 237, 0.05);
+      --transition-speed: 0.3s;
+    }
+
+    [data-theme="dark"] {
+      --bg-body: #0F0A1A;
+      --text-body: #E5E0F8;
+      --bg-nav: rgba(18, 12, 30, 0.92);
+      --bg-mobile: #1A1230;
+      --bg-hero: linear-gradient(155deg, #120C20 0%, #1A1230 50%, #221A3A 100%);
+      --bg-features: linear-gradient(165deg, #120C20 0%, #1A1230 100%);
+      --bg-how: #0F0A1A;
+      --bg-resources: linear-gradient(165deg, #0A0618 0%, #120C20 100%);
+      --bg-institutes: #0F0A1A;
+      --bg-cta: linear-gradient(135deg, #5B21B6 0%, #6D28D9 40%, #4C1D95 100%);
+      --bg-footer: #0A0618;
+      --text-footer: #A8A0C8;
+      --border-light: #2D1F4A;
+      --card-bg: #1A1230;
+      --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+      --step-bg: #1A1230;
+      --step-border: #2D1F4A;
+      --trust-bg: #0F0A1A;
+      --text-muted: #A8A0C8;
+      --tag-bg: rgba(124, 58, 237, 0.2);
+      --tag-color: #A78BFA;
+      --input-bg: #1A1230;
+      --input-border: #2D1F4A;
+      --hover-bg: rgba(124, 58, 237, 0.15);
+      --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 8px 40px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 16px 60px rgba(0, 0, 0, 0.5);
+      --purple-pale: rgba(124, 58, 237, 0.2);
+      --purple-bg: rgba(124, 58, 237, 0.1);
+      --light-gray: #1A1230;
+      --white: #1A1230;
+      --navy: #E5E0F8;
+      --dark: #E5E0F8;
+      --gray: #A8A0C8;
+      --border: #2D1F4A;
+    }
+
+    /* ===== BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-body);
+      background: var(--bg-body);
+      overflow-x: hidden;
+      transition: background var(--transition-speed), color var(--transition-speed);
+      -webkit-font-smoothing: antialiased;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-body); }
+    ::-webkit-scrollbar-thumb { background: var(--purple-light); border-radius: 10px; }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--bg-nav);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 0 1.5rem;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 20px rgba(124, 58, 237, 0.07);
+      transition: box-shadow .3s, background var(--transition-speed), border-color var(--transition-speed);
+      gap: 0.5rem;
+    }
+    nav.scrolled {
+      box-shadow: 0 4px 28px rgba(124, 58, 237, 0.14);
+    }
+    [data-theme="dark"] nav.scrolled {
+      box-shadow: 0 4px 28px rgba(0, 0, 0, 0.4);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+      flex-shrink: 0;
+    }
+    .logo-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+    .logo-text strong {
+      display: block;
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--navy);
+      letter-spacing: -.3px;
+      transition: color var(--transition-speed);
+      line-height: 1.2;
+    }
+    .logo-text span {
+      font-size: 0.65rem;
+      color: var(--purple);
+      font-weight: 600;
+      letter-spacing: .4px;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      list-style: none;
+      flex-wrap: nowrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 3px;
+      transition: color .2s;
+      white-space: nowrap;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--purple);
+      border-radius: 2px;
+      transition: width .25s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--purple);
+    }
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .btn-outline {
+      padding: 8px 16px;
+      border: 1.5px solid var(--purple);
+      border-radius: 8px;
+      background: transparent;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--purple);
+      cursor: pointer;
+      transition: all .2s;
+      text-decoration: none;
+      white-space: nowrap;
+      font-family: var(--font-body);
+    }
+    .btn-outline:hover {
+      background: var(--purple);
+      color: white;
+    }
+    .btn-primary {
+      padding: 8px 16px;
+      background: var(--purple);
+      border: none;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: white;
+      cursor: pointer;
+      transition: all .2s;
+      text-decoration: none;
+      white-space: nowrap;
+      font-family: var(--font-body);
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.30);
+    }
+    .btn-primary:hover {
+      background: #6D28D9;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(124, 58, 237, 0.38);
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2.5px;
+      background: var(--text-body);
+      border-radius: 2px;
+      transition: all .3s, background var(--transition-speed);
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: var(--bg-mobile);
+      z-index: 199;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+      flex-direction: column;
+      gap: 0.6rem;
+      border-top: 2px solid var(--purple-pale);
+      transition: background var(--transition-speed), border-color var(--transition-speed);
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    .mobile-menu.open {
+      display: flex;
+      animation: fadeUp .25s ease;
+    }
+    .mobile-menu a {
+      text-decoration: none;
+      color: var(--text-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border-light);
+      transition: color .2s, border-color var(--transition-speed);
+    }
+    .mobile-menu a:hover {
+      color: var(--purple);
+    }
+    .mobile-menu .mobile-btns {
+      display: flex;
+      gap: 10px;
+      padding-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .theme-toggle {
+      background: none;
+      border: 1.5px solid var(--border-light);
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--text-body);
+      transition: all .3s;
+      padding: 0;
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover {
+      background: var(--purple-pale);
+      border-color: var(--purple);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.35); }
+      70% { box-shadow: 0 0 0 18px rgba(124, 58, 237, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+    }
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes floatB {
+      0%, 100% { transform: translateY(0px) rotate(3deg); }
+      50% { transform: translateY(-14px) rotate(-3deg); }
+    }
+    @keyframes orbit {
+      from { transform: rotate(0deg) translateX(70px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 2rem;
+      padding: 4rem 5rem 3rem;
+      background: var(--bg-hero);
+      position: relative;
+      overflow: hidden;
+      transition: background var(--transition-speed);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(167, 139, 250, 0.18) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.10) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-particle {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--purple-light);
+      opacity: .25;
+      pointer-events: none;
+    }
+    .hp1 { top: 15%; left: 8%; width: 8px; height: 8px; animation: float 4s ease-in-out infinite; }
+    .hp2 { top: 35%; left: 4%; width: 5px; height: 5px; animation: float 5s ease-in-out infinite 1s; }
+    .hp3 { top: 70%; left: 12%; width: 12px; height: 12px; animation: float 6s ease-in-out infinite .5s; opacity: .15; }
+    .hp4 { top: 20%; right: 6%; width: 6px; height: 6px; animation: float 4.5s ease-in-out infinite 1.5s; }
+    .hp5 { bottom: 25%; right: 10%; width: 8px; height: 8px; animation: float 5.5s ease-in-out infinite; opacity: .2; }
+    .hero-left {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card-bg);
+      border: 1.5px solid var(--border-light);
+      border-radius: 30px;
+      padding: 7px 16px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--purple);
+      margin-bottom: 1.4rem;
+      box-shadow: 0 2px 14px rgba(124, 58, 237, 0.10);
+      animation: fadeUp .6s ease both;
+      transition: background var(--transition-speed), border-color var(--transition-speed);
+    }
+    .hero-badge .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse-ring 1.8s infinite;
+    }
+    .hero-title {
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.12;
+      color: var(--navy);
+      margin-bottom: 1.3rem;
+      animation: fadeUp .7s .15s ease both;
+      transition: color var(--transition-speed);
+    }
+    .hero-title .line-accent {
+      display: block;
+      background: linear-gradient(90deg, var(--purple) 0%, #A855F7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 430px;
+      margin-bottom: 2.2rem;
+      animation: fadeUp .7s .3s ease both;
+      transition: color var(--transition-speed);
+    }
+    .hero-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 2.2rem;
+      animation: fadeUp .7s .45s ease both;
+    }
+    .btn-cta-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--purple);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 14px 28px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all .25s;
+      box-shadow: 0 8px 28px rgba(124, 58, 237, 0.38);
+      font-family: var(--font-body);
+    }
+    .btn-cta-main:hover {
+      background: #6D28D9;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(124, 58, 237, 0.45);
+    }
+    .btn-cta-main .cta-arrow {
+      width: 28px;
+      height: 28px;
+      background: rgba(255, 255, 255, 0.22);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      transition: transform .2s;
+    }
+    .btn-cta-main:hover .cta-arrow {
+      transform: translateX(3px);
+    }
+    .btn-cta-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--purple);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: gap .2s;
+    }
+    .btn-cta-ghost:hover {
+      gap: 12px;
+    }
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      animation: fadeUp .7s .6s ease both;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--purple);
+      line-height: 1;
+    }
+    .stat-num sup {
+      font-size: 0.8rem;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 3px;
+      transition: color var(--transition-speed);
+    }
+    .stat-divider {
+      width: 1px;
+      height: 34px;
+      background: var(--border-light);
+      transition: background var(--transition-speed);
+    }
+    .hero-right {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+    }
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 1/1.1;
+      animation: fadeIn .8s .3s ease both;
+    }
+    .hv-orb {
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, rgba(167, 139, 250, 0.50) 0%, rgba(124, 58, 237, 0.22) 55%, transparent 80%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: float 6s ease-in-out infinite;
+    }
+    .hv-orbit {
+      position: absolute;
+      width: 76%;
+      height: 76%;
+      border-radius: 50%;
+      border: 2px dashed rgba(124, 58, 237, 0.25);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin-slow 18s linear infinite;
+    }
+    .hv-orbit-2 {
+      position: absolute;
+      width: 54%;
+      height: 54%;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(167, 139, 250, 0.30);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin-slow 12s linear infinite reverse;
+    }
+    .hv-orb-dot {
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      box-shadow: 0 4px 18px rgba(124, 58, 237, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      top: 50%;
+      left: 50%;
+      transform-origin: 0 0;
+      transition: background var(--transition-speed);
+    }
+    .hv-orb-dot.d1 {
+      animation: orbit 18s linear infinite;
+      margin-top: -18px;
+      margin-left: -18px;
+    }
+    .hv-orb-dot.d2 {
+      animation: orbit 12s linear infinite reverse;
+      margin-top: -18px;
+      margin-left: -18px;
+      width: 28px;
+      height: 28px;
+      font-size: .78rem;
+    }
+    .hv-screen {
+      position: absolute;
+      width: 70%;
+      max-width: 240px;
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(124, 58, 237, 0.22), 0 4px 20px rgba(0, 0, 0, 0.07);
+      padding: 16px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 4;
+      animation: float 5s ease-in-out infinite 1s;
+      transition: background var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .hv-screen-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .hv-screen-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .hv-screen-dot.red { background: #FC8181; }
+    .hv-screen-dot.yellow { background: #F6E05E; }
+    .hv-screen-dot.green { background: #68D391; }
+    .hv-screen-title {
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: var(--purple);
+      margin-left: auto;
+    }
+    .hv-skill-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border-light);
+      gap: 4px;
+      transition: border-color var(--transition-speed);
+    }
+    .hv-skill-row:last-of-type { border-bottom: none; }
+    .hv-skill-name {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--text-body);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color var(--transition-speed);
+    }
+    .hv-skill-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      color: white;
+      flex-shrink: 0;
+    }
+    .hv-bar-wrap {
+      width: 60px;
+      height: 5px;
+      background: var(--border-light);
+      border-radius: 3px;
+      overflow: hidden;
+      transition: background var(--transition-speed);
+    }
+    .hv-bar {
+      height: 100%;
+      border-radius: 3px;
+    }
+    .hv-demand {
+      font-size: 0.6rem;
+      font-weight: 700;
+      min-width: 28px;
+      text-align: right;
+    }
+    .hv-pill {
+      position: absolute;
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 6px 12px;
+      box-shadow: 0 6px 26px rgba(0, 0, 0, 0.10);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      font-size: 0.7rem;
+      color: var(--text-body);
+      white-space: nowrap;
+      z-index: 5;
+      transition: background var(--transition-speed), color var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .hv-pill-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+    .pill-a { top: 2%; left: -3%; animation: floatB 4s ease-in-out infinite; }
+    .pill-b { top: 38%; right: -5%; animation: floatB 5s ease-in-out infinite 1s; }
+    .pill-c { bottom: 6%; left: 2%; animation: floatB 6s ease-in-out infinite .5s; }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      background: var(--trust-bg);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      transition: background var(--transition-speed), border-color var(--transition-speed);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: color var(--transition-speed);
+    }
+    .trust-item i {
+      font-size: 0.95rem;
+      color: var(--purple);
+    }
+
+    /* ===== SECTIONS ===== */
+    .section-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--purple);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: var(--purple-pale);
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+      transition: background var(--transition-speed), color var(--transition-speed);
+    }
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: .6rem;
+      line-height: 1.2;
+      transition: color var(--transition-speed);
+    }
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 550px;
+      transition: color var(--transition-speed);
+    }
+    .section-header-center {
+      text-align: center;
+    }
+    .section-header-center .section-subtitle {
+      margin: 0 auto;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills-section {
+      padding: 4rem 2rem;
+      background: var(--bg-body);
+      transition: background var(--transition-speed);
+      text-align: center;
+    }
+    .skills-live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #FFF0F0;
+      border: 1px solid #FECACA;
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #DC2626;
+      margin-bottom: 1.5rem;
+    }
+    [data-theme="dark"] .skills-live-badge {
+      background: rgba(220, 38, 38, 0.15);
+      border-color: rgba(220, 38, 38, 0.3);
+    }
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #EF4444;
+      animation: pulse-ring 1.5s infinite;
+    }
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin: 2rem 0 2.5rem;
+    }
+    .skills-tags span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: background var(--transition-speed), color var(--transition-speed);
+    }
+
+    /* ===== FEATURES ===== */
+    .features-section {
+      padding: 4rem 2rem;
+      background: var(--bg-features);
+      transition: background var(--transition-speed);
+    }
+    .features-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem 1.5rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(124, 58, 237, 0.06);
+      transition: all .28s, background var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .feature-card.featured {
+      background: linear-gradient(145deg, var(--purple) 0%, #6D28D9 100%);
+      color: white;
+    }
+    .feature-card.featured .feature-title,
+    .feature-card.featured .feature-desc {
+      color: white;
+    }
+    .feature-card.featured .feature-desc {
+      opacity: .85;
+    }
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    .fi-purple { background: var(--purple-pale); color: var(--purple); }
+    .fi-green { background: #ECFDF5; color: #059669; }
+    .fi-blue { background: #EFF6FF; color: #2563EB; }
+    .fi-orange { background: #FFFBEB; color: #D97706; }
+    .fi-teal { background: #F0FDFA; color: #0D9488; }
+    .fi-white { background: rgba(255, 255, 255, 0.2); color: white; }
+    [data-theme="dark"] .fi-purple { background: rgba(124, 58, 237, 0.25); }
+    [data-theme="dark"] .fi-green { background: rgba(16, 185, 129, 0.2); }
+    [data-theme="dark"] .fi-blue { background: rgba(59, 130, 246, 0.2); }
+    [data-theme="dark"] .fi-orange { background: rgba(245, 158, 11, 0.2); }
+    [data-theme="dark"] .fi-teal { background: rgba(13, 148, 136, 0.2); }
+    .feature-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: .4rem;
+      transition: color var(--transition-speed);
+    }
+    .feature-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      transition: color var(--transition-speed);
+    }
+    .feature-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--purple);
+      text-decoration: none;
+      transition: gap .2s;
+    }
+    .feature-card.featured .feature-link {
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .feature-link:hover {
+      gap: 10px;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .how-section {
+      padding: 4rem 2rem;
+      background: var(--bg-how);
+      transition: background var(--transition-speed);
+    }
+    .steps-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+    .steps-wrap::before {
+      content: '';
+      position: absolute;
+      top: 52px;
+      left: calc(16.66% + 20px);
+      right: calc(16.66% + 20px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--purple) 0%, var(--purple-light) 50%, var(--purple) 100%);
+      opacity: 0.25;
+    }
+    .step-card {
+      background: var(--step-bg);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem 1.5rem 1.8rem;
+      text-align: center;
+      transition: all .28s, background var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
+      border: 1.5px solid var(--step-border);
+      position: relative;
+    }
+    .step-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      background: var(--card-bg);
+    }
+    .step-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 2px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--purple);
+      margin: 0 auto 1.2rem;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.15);
+      transition: background var(--transition-speed), border-color var(--transition-speed);
+    }
+    .step-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin: 0 auto 1rem;
+    }
+    .si-purple { background: var(--purple-pale); }
+    .si-blue { background: #EFF6FF; }
+    .si-green { background: #ECFDF5; }
+    [data-theme="dark"] .si-blue { background: rgba(59, 130, 246, 0.2); }
+    [data-theme="dark"] .si-green { background: rgba(16, 185, 129, 0.2); }
+    .step-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: .4rem;
+      transition: color var(--transition-speed);
+    }
+    .step-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      transition: color var(--transition-speed);
+    }
+
+    /* ===== RESOURCES ===== */
+    .resources-section {
+      padding: 4rem 2rem;
+      background: var(--bg-resources);
+      color: white;
+      position: relative;
+      overflow: hidden;
+      transition: background var(--transition-speed);
+    }
+    .resources-section::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.25) 0%, transparent 65%);
+      border-radius: 50%;
+    }
+    .resources-section .section-badge {
+      color: var(--purple-light);
+      background: rgba(124, 58, 237, 0.2);
+    }
+    .resources-section .section-title {
+      color: white;
+    }
+    .resources-section .section-subtitle {
+      color: rgba(255, 255, 255, 0.65);
+    }
+    .resources-tabs {
+      display: flex;
+      gap: 10px;
+      margin: 2rem 0 1.8rem;
+      flex-wrap: wrap;
+    }
+    .res-tab {
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s;
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.65);
+      background: transparent;
+      font-family: var(--font-body);
+    }
+    .res-tab.active,
+    .res-tab:hover {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: white;
+      box-shadow: 0 4px 18px rgba(124, 58, 237, 0.4);
+    }
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+      transition: opacity 0.3s ease;
+    }
+    .resource-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: all .28s;
+      cursor: default;
+    }
+    .resource-card:hover {
+      background: rgba(124, 58, 237, 0.20);
+      border-color: rgba(124, 58, 237, 0.40);
+      transform: translateY(-4px);
+    }
+    .resource-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 0.8rem;
+    }
+    .resource-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .resource-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: white;
+    }
+    .resource-type {
+      font-size: 0.7rem;
+      color: var(--purple-light);
+      font-weight: 600;
+    }
+    .resource-desc {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.6;
+    }
+    .resource-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 0.8rem;
+    }
+    .res-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 12px;
+      background: rgba(124, 58, 237, 0.25);
+      color: var(--purple-light);
+    }
+
+    /* ===== INSTITUTES ===== */
+    .institutes-section {
+      padding: 4rem 2rem;
+      background: var(--bg-institutes);
+      transition: background var(--transition-speed);
+    }
+    .institutes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .institute-card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      transition: all .28s, background var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
+      position: relative;
+      overflow: hidden;
+    }
+    .institute-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple), var(--purple-light));
+      transform: scaleX(0);
+      transition: transform .3s;
+    }
+    .institute-card:hover::after {
+      transform: scaleX(1);
+    }
+    .institute-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    .institute-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--purple-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      transition: background var(--transition-speed);
+    }
+    .institute-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: .2rem;
+      transition: color var(--transition-speed);
+    }
+    .institute-city {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.7rem;
+      color: var(--purple);
+      font-weight: 600;
+      margin-bottom: .6rem;
+    }
+    .institute-address {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+      transition: color var(--transition-speed);
+    }
+    .institute-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .inst-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 12px;
+      background: var(--tag-bg);
+      color: var(--tag-color);
+      transition: background var(--transition-speed), color var(--transition-speed);
+    }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      padding: 4rem 2rem;
+      background: var(--bg-cta);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: background var(--transition-speed);
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      left: -80px;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.10) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .cta-section::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      right: -80px;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .cta-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-sub {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-btns {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+    .btn-cta-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      color: var(--purple);
+      border-radius: 50px;
+      padding: 12px 26px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all .25s;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+      font-family: var(--font-body);
+    }
+    .btn-cta-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+    }
+    .btn-cta-outline-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.55);
+      border-radius: 50px;
+      padding: 12px 26px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all .25s;
+      font-family: var(--font-body);
+    }
+    .btn-cta-outline-white:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: white;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--bg-footer);
+      color: var(--text-footer);
+      padding: 3rem 2rem 1.5rem;
+      transition: background var(--transition-speed), color var(--transition-speed);
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      margin-bottom: 1.8rem;
+    }
+    .footer-brand .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+      text-decoration: none;
+    }
+    .footer-brand .logo-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+    }
+    .footer-brand .logo-text strong {
+      color: white;
+      font-size: 0.95rem;
+    }
+    .footer-brand .logo-text span {
+      color: var(--purple-light);
+    }
+    .footer-brand p {
+      font-size: 0.8rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.50);
+      margin-bottom: 1.2rem;
+    }
+    .social-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-footer);
+      text-decoration: none;
+      transition: all .2s;
+      font-size: 0.85rem;
+    }
+    .social-links a:hover {
+      background: var(--purple);
+      color: white;
+      transform: translateY(-3px);
+    }
+    .footer-col h5 {
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      position: relative;
+      padding-bottom: 6px;
+    }
+    .footer-col h5::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 24px;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--purple), var(--purple-light));
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: .5rem;
+    }
+    .footer-col ul li a {
+      color: rgba(255, 255, 255, 0.50);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all .2s;
+    }
+    .footer-col ul li a:hover {
+      color: var(--purple-light);
+      padding-left: 4px;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.35);
+    }
+    .footer-legal {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .footer-legal a {
+      color: rgba(255, 255, 255, 0.35);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-legal a:hover {
+      color: var(--purple-light);
+    }
+
+    /* ===== REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================
+       RESPONSIVE BREAKPOINTS
+    ============================================ */
+
+    /* Large screens (1200px+) – already fine, keep max-width containers */
+    @media (max-width: 1200px) {
+      .hero { padding: 3.5rem 3rem 2.5rem; }
+      .features-grid { grid-template-columns: repeat(3, 1fr); }
+      .resources-grid { grid-template-columns: repeat(3, 1fr); }
+      .institutes-grid { grid-template-columns: repeat(3, 1fr); }
+      .footer-top { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+    }
+
+    @media (max-width: 992px) {
+      nav { padding: 0 1.2rem; }
+      .nav-links, .nav-actions .nav-auth-group { display: none; }
+      .hamburger { display: flex; }
+      .nav-actions .theme-toggle { display: flex; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 2.5rem 1.5rem 2rem;
+        text-align: center;
+        min-height: auto;
+      }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .hero-cta-row { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-right { min-height: 320px; order: -1; }
+      .hero-visual { max-width: 340px; }
+
+      .features-header { grid-template-columns: 1fr; text-align: center; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .steps-wrap { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
+      .steps-wrap::before { display: none; }
+      .resources-grid { grid-template-columns: 1fr 1fr; }
+      .institutes-grid { grid-template-columns: 1fr 1fr; }
+      .trust-bar { gap: 1.2rem; padding: 1rem 1.5rem; }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 2rem 1.2rem 1.8rem; }
+      .hero-right { min-height: 280px; }
+      .hero-visual { max-width: 280px; }
+      .hv-screen { padding: 12px; max-width: 200px; }
+      .hv-skill-name { font-size: 0.55rem; }
+      .hv-bar-wrap { width: 40px; }
+      .hv-demand { font-size: 0.5rem; min-width: 20px; }
+      .hv-pill { font-size: 0.6rem; padding: 4px 10px; }
+      .pill-a { top: 0%; left: -2%; }
+      .pill-b { top: 35%; right: -2%; }
+      .pill-c { bottom: 4%; left: 0%; }
+
+      .features-grid { grid-template-columns: 1fr; }
+      .resources-grid { grid-template-columns: 1fr; }
+      .institutes-grid { grid-template-columns: 1fr; }
+      .trust-bar { flex-direction: column; gap: 0.8rem; align-items: flex-start; padding: 1rem 1.2rem; }
+      .trust-item { font-size: 0.75rem; }
+
+      .footer-top { grid-template-columns: 1fr; gap: 1.8rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-legal { justify-content: center; }
+      .cta-btns { flex-direction: column; align-items: center; }
+      .btn-cta-white, .btn-cta-outline-white { width: 100%; justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 1.7rem; }
+      .hero-desc { font-size: 0.85rem; }
+      .btn-cta-main { padding: 12px 20px; font-size: 0.8rem; }
+      .hero-stats { gap: 1rem; }
+      .stat-num { font-size: 1.2rem; }
+      .stat-divider { height: 28px; }
+      .hero-right { min-height: 240px; }
+      .hero-visual { max-width: 220px; }
+      .hv-screen { padding: 10px; max-width: 160px; }
+      .hv-screen-title { font-size: 0.5rem; }
+      .hv-skill-name { font-size: 0.5rem; }
+      .hv-bar-wrap { width: 30px; height: 4px; }
+      .hv-demand { font-size: 0.45rem; min-width: 16px; }
+      .hv-pill { font-size: 0.5rem; padding: 3px 8px; }
+      .hv-pill-icon { width: 20px; height: 20px; font-size: 0.6rem; }
+      .pill-a, .pill-b, .pill-c { display: none; }
+      .skills-tags span { font-size: 0.7rem; padding: 6px 12px; }
+      .section-title { font-size: 1.4rem; }
+      .section-subtitle { font-size: 0.85rem; }
+    }
+
+    /* Extra large monitors (1600px+) – keep content readable */
+    @media (min-width: 1600px) {
+      .hero { padding: 6rem 10rem 4rem; }
+      .skills-section, .features-section, .how-section, .resources-section, .institutes-section, .cta-section {
+        padding: 6rem 10rem;
+      }
+      .trust-bar { padding: 1.8rem 10rem; }
+      footer { padding: 5rem 10rem 2.5rem; }
+      .hero-title { font-size: 4rem; }
+      .hero-desc { font-size: 1.15rem; max-width: 560px; }
+      .hero-visual { max-width: 520px; }
+    }
+  
+    /* ============================================
+       RESPONSIVE HARDENING PATCH (added)
+       Nothing above this point was removed or changed.
+    ============================================ */
+
+    /* --- FIX: navbar overlaps/breaks between ~993px and ~1300px
+       because the full desktop nav (9 links + auth buttons) needs
+       more room than the old 992px cutoff gave it. Switch to the
+       mobile hamburger menu earlier, before it has a chance to
+       overlap, using the SAME classes the page already defines. --- */
+    @media (max-width: 1300px) {
+      .nav-links,
+      .nav-actions .nav-auth-group {
+        display: none !important;
+      }
+      .hamburger {
+        display: flex !important;
+      }
+      .nav-actions .theme-toggle {
+        display: flex !important;
+      }
+      /* FIX: nav uses justify-content:space-between across its 3
+         top-level children (logo, nav-actions, hamburger). With
+         nav-links removed from flow, that space-between pushed the
+         moon button into the middle of the bar, away from the
+         hamburger. Pull nav-actions + hamburger together as one
+         right-aligned group instead. */
+      .nav-actions {
+        margin-left: auto;
+        gap: 10px;
+      }
+      .hamburger {
+        margin-left: 10px;
+      }
+    }
+
+    /* --- General safety net so media, tables, and form controls
+       never force horizontal scrolling on any device. --- */
+    img, video, iframe, embed, object {
+      max-width: 100%;
+      height: auto;
+    }
+    table {
+      max-width: 100%;
+    }
+    input, select, textarea, button {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    pre, code {
+      overflow-x: auto;
+    }
+
+    /* --- Fine-tuning for tablets in the 993-1300px gap so spacing
+       still feels intentional now that the mobile menu is active
+       there (mirrors the page's own >=992px mobile styling). --- */
+    @media (max-width: 1300px) and (min-width: 993px) {
+      nav { padding: 0 1.5rem; }
+    }
+
+    /* --- Extra fine-tuning for very small phones --- */
+    @media (max-width: 400px) {
+      [class*="hero-title"],
+      [class*="page-title"] {
+        font-size: clamp(1.3rem, 7.5vw, 1.6rem) !important;
+        line-height: 1.25 !important;
+      }
+      [class*="section-title"] {
+        font-size: clamp(1.15rem, 6vw, 1.35rem) !important;
+      }
+      [class*="hero-desc"],
+      [class*="hero-sub"],
+      [class*="page-sub"] {
+        font-size: 0.82rem !important;
+      }
+    }
+
+    @media (max-width: 340px) {
+      [class*="hero-title"],
+      [class*="page-title"] {
+        font-size: 1.25rem !important;
+      }
+      body {
+        font-size: 0.92rem;
+      }
+    }
+
+  
+    /* --- FIX: theme-toggle (moon/sun) button was a fixed 38px
+       circle at every screen size. Scale it down in step with the
+       rest of the nav on smaller screens, and guarantee the icon
+       glyph stays perfectly centered at every size. --- */
+    .theme-toggle {
+      line-height: 1;
+    }
+    .theme-toggle i,
+    #themeIcon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1em;
+      height: 1em;
+    }
+    @media (max-width: 480px) {
+      .theme-toggle {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.85rem !important;
+      }
+    }
+    @media (max-width: 340px) {
+      .theme-toggle {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.75rem !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="mainNav">
+    <a class="nav-logo" href="index.html">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L8 8H3l4 4-2 6 7-4 7 4-2-6 4-4h-5L12 2z" fill="white" opacity=".9" />
+          <circle cx="12" cy="12" r="2.5" fill="white" />
+        </svg>
+      </div>
+      <div class="logo-text">
+        <strong>VisionPath</strong>
+        <span>Discover · Learn · Lead</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="skills.html">Top Skills</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="Roadmap.html">Roadmap</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#institutes">Institutes</a></li>
+      <li><a href="campare.html">Compare Careers</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Support</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+      <span id="navLoggedOut" class="nav-auth-group">
+        <a href="login.php" class="btn-outline">Log In</a>
+        <a href="register.php" class="btn-primary">Get Started</a>
+      </span>
+      <span id="navLoggedIn" class="nav-auth-group" style="display:none;">
+        <a href="logout.php" class="btn-outline" style="color:#DC2626; border-color:#DC2626;">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+      </span>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="skills.html">Top Skills</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="Roadmap.html">Roadmap</a>
+    <a href="#resources">Resources</a>
+    <a href="#institutes">Institutes</a>
+    <a href="campare.html">Compare Careers</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Support</a>
+    <div class="mobile-btns" id="navLoggedOutMobile">
+      <a href="login.php" class="btn-outline" style="flex:1;text-align:center;padding:11px;">Log In</a>
+      <a href="register.php" class="btn-primary" style="flex:1;text-align:center;padding:11px;">Get Started</a>
+    </div>
+    <div class="mobile-btns" id="navLoggedInMobile" style="display:none;">
+      <a href="logout.php" class="btn-outline" style="flex:1;text-align:center;padding:11px;color:#DC2626;border-color:#DC2626;">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-particle hp1"></div>
+    <div class="hero-particle hp2"></div>
+    <div class="hero-particle hp3"></div>
+    <div class="hero-particle hp4"></div>
+    <div class="hero-particle hp5"></div>
+
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Live Skill Trends Updated Daily
+      </div>
+      <h1 class="hero-title">
+        Discover the Skills<br>
+        <span class="line-accent">That Lead Tomorrow</span>
+      </h1>
+      <p class="hero-desc">
+        VisionPath tracks the most in-demand skills in real time — then guides you to the best YouTube
+        channels, online platforms, and top institutes in Pakistan to master them.
+      </p>
+      <div class="hero-cta-row">
+        <a href="skills.html" class="btn-cta-main">
+          Explore Top Skills
+          <span class="cta-arrow"><i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="#features" class="btn-cta-ghost">
+          See how it works <i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">1<sup>K+</sup></div>
+          <div class="stat-label">Students Guided</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num">120<sup>+</sup></div>
+          <div class="stat-label">In-Demand Skills</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num">40<sup>+</sup></div>
+          <div class="stat-label">Partner Institutes</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-visual">
+        <div class="hv-orb"></div>
+        <div class="hv-orbit"></div>
+        <div class="hv-orbit-2"></div>
+        <div class="hv-orb-dot d1">🤖</div>
+        <div class="hv-orb-dot d2">💡</div>
+
+        <div class="hv-screen">
+          <div class="hv-screen-header">
+            <div class="hv-screen-dot red"></div>
+            <div class="hv-screen-dot yellow"></div>
+            <div class="hv-screen-dot green"></div>
+            <div class="hv-screen-title">VisionPath</div>
+          </div>
+          <div class="hv-skill-row">
+            <div class="hv-skill-name">
+              <div class="hv-skill-icon" style="background:#8B5CF6;">🤖</div> AI/ML
+            </div>
+            <div class="hv-bar-wrap"><div class="hv-bar" style="width:92%;background:linear-gradient(90deg,#7C3AED,#A78BFA);"></div></div>
+            <div class="hv-demand" style="color:#7C3AED;">92%</div>
+          </div>
+          <div class="hv-skill-row">
+            <div class="hv-skill-name">
+              <div class="hv-skill-icon" style="background:#3B82F6;">🌐</div> Web Dev
+            </div>
+            <div class="hv-bar-wrap"><div class="hv-bar" style="width:85%;background:linear-gradient(90deg,#3B82F6,#60A5FA);"></div></div>
+            <div class="hv-demand" style="color:#3B82F6;">85%</div>
+          </div>
+          <div class="hv-skill-row">
+            <div class="hv-skill-name">
+              <div class="hv-skill-icon" style="background:#10B981;">📊</div> Data Sci
+            </div>
+            <div class="hv-bar-wrap"><div class="hv-bar" style="width:78%;background:linear-gradient(90deg,#10B981,#34D399);"></div></div>
+            <div class="hv-demand" style="color:#10B981;">78%</div>
+          </div>
+          <div class="hv-skill-row">
+            <div class="hv-skill-name">
+              <div class="hv-skill-icon" style="background:#F59E0B;">🔒</div> Cyber Sec
+            </div>
+            <div class="hv-bar-wrap"><div class="hv-bar" style="width:72%;background:linear-gradient(90deg,#F59E0B,#FBBF24);"></div></div>
+            <div class="hv-demand" style="color:#F59E0B;">72%</div>
+          </div>
+        </div>
+
+        <div class="hv-pill pill-a">
+          <div class="hv-pill-icon" style="background:#EDE9FE;">🚀</div> Future Ready
+        </div>
+        <div class="hv-pill pill-b">
+          <div class="hv-pill-icon" style="background:#EFF6FF;">📘</div> Learn Online
+        </div>
+        <div class="hv-pill pill-c">
+          <div class="hv-pill-icon" style="background:#ECFDF5;">🏫</div> Find Institutes
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <div class="trust-bar">
+    <div class="trust-item"><i class="fas fa-bolt"></i><span>Real-Time Skill Trends</span></div>
+    <div class="trust-item"><i class="fab fa-youtube"></i><span>Best YouTube Channels</span></div>
+    <div class="trust-item"><i class="fas fa-laptop-code"></i><span>Top Online Platforms</span></div>
+    <div class="trust-item"><i class="fas fa-map-marker-alt"></i><span>Institutes Across Pakistan</span></div>
+    <div class="trust-item"><i class="fas fa-mobile-alt"></i><span>Fully Responsive</span></div>
+  </div>
+
+  <!-- ===== SKILLS TEASER ===== -->
+  <section class="skills-section reveal" id="skills">
+    <div class="skills-live-badge">
+      <span class="live-dot"></span> Live Data — Updated Today
+    </div>
+    <div class="section-header-center">
+      <div class="section-badge">Most In-Demand Skills</div>
+      <h2 class="section-title">Skills Leading the Job Market</h2>
+      <p class="section-subtitle">
+        Our AI scans thousands of job postings daily to surface the skills hiring managers want most right now —
+        and in the coming years. Explore the full list of 120+ in-demand skills.
+      </p>
+    </div>
+    <div class="skills-tags">
+      <span style="background:var(--purple-pale);color:var(--purple);"><span>🤖</span> AI / ML</span>
+      <span style="background:#EFF6FF;color:#2563EB;"><span>🌐</span> Full-Stack Web Dev</span>
+      <span style="background:#ECFDF5;color:#059669;"><span>📊</span> Data Science</span>
+      <span style="background:#FFF0F0;color:#DC2626;"><span>🔒</span> Cybersecurity</span>
+      <span style="background:#F0FDFA;color:#0D9488;"><span>☁️</span> Cloud Computing</span>
+      <span style="background:#FDF2F8;color:#BE185D;"><span>📱</span> Mobile App Dev</span>
+      <span style="background:var(--purple-pale);color:var(--purple);">+110 more skills →</span>
+    </div>
+    <a href="skills.html" class="btn-cta-main" style="display:inline-flex;">
+      Explore All 120+ Skills
+      <span class="cta-arrow"><i class="fas fa-arrow-right"></i></span>
+    </a>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features-section reveal" id="features">
+    <div class="features-header">
+      <div>
+        <div class="section-badge">What You Get</div>
+        <h2 class="section-title">Everything You Need to Build Your Future</h2>
+        <p class="section-subtitle">
+          From discovering trending skills to finding the perfect place to learn — physically in Pakistan or
+          online worldwide — VisionPath is your complete career intelligence platform.
+        </p>
+      </div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card featured">
+        <div class="feature-icon fi-white"><i class="fas fa-bolt"></i></div>
+        <div class="feature-title">Live Skill Intelligence</div>
+        <p class="feature-desc">Our engine scans job boards, LinkedIn, and tech news daily to show you exactly which skills are surging.</p>
+        <a href="skills.html" class="feature-link">Explore Trends <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-purple"><i class="fab fa-youtube"></i></div>
+        <div class="feature-title">Top YouTube Channels</div>
+        <p class="feature-desc">For every skill, we curate the absolute best YouTube channels with millions of verified learners.</p>
+        <a href="#" class="feature-link">See Channels <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-blue"><i class="fas fa-laptop-code"></i></div>
+        <div class="feature-title">Best Online Platforms</div>
+        <p class="feature-desc">Coursera, Udemy, edX, freeCodeCamp — we rank and compare the best platforms.</p>
+        <a href="#" class="feature-link">Browse Platforms <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-green"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="feature-title">Institutes in Pakistan</div>
+        <p class="feature-desc">Find top IT institutes across Karachi, Lahore, Islamabad and more — with addresses and course details.</p>
+        <a href="#institutes" class="feature-link">Find Institutes <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-orange"><i class="fas fa-chart-line"></i></div>
+        <div class="feature-title">Salary & Market Trends</div>
+        <p class="feature-desc">See real salary ranges for each skill in Pakistan and globally — know your worth.</p>
+        <a href="#" class="feature-link">See Salaries <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-teal"><i class="fas fa-road"></i></div>
+        <div class="feature-title">Personalized Roadmaps</div>
+        <p class="feature-desc">Get a step-by-step learning roadmap tailored to your goals — from beginner to job-ready.</p>
+        <a href="Roadmap.html" class="feature-link">Build Roadmap <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-section reveal" id="how">
+    <div class="section-header-center">
+      <div class="section-badge">How It Works</div>
+      <h2 class="section-title">Your Journey in 3 Simple Steps</h2>
+      <p class="section-subtitle">
+        VisionPath makes career planning effortless — from discovering the right skill to walking through the
+        doors of the right institute.
+      </p>
+    </div>
+    <div class="steps-wrap">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-icon si-purple"><i class="fas fa-search" style="font-size:1.4rem;color:#7C3AED;"></i></div>
+        <div class="step-title">Discover In-Demand Skills</div>
+        <p class="step-desc">Browse our live skill rankings pulled from thousands of job listings. See which skills are trending right now.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-icon si-blue"><i class="fas fa-graduation-cap" style="font-size:1.4rem;color:#2563EB;"></i></div>
+        <div class="step-title">Choose How You Learn</div>
+        <p class="step-desc">Pick online learning (YouTube, Coursera, Udemy) or physical institutes near you in Pakistan.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-icon si-green"><i class="fas fa-rocket" style="font-size:1.4rem;color:#059669;"></i></div>
+        <div class="step-title">Build Your Future</div>
+        <p class="step-desc">Follow your personalized roadmap, track progress, and land your dream job with the skills the market demands.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LEARNING RESOURCES ===== -->
+  <section class="resources-section reveal" id="resources">
+    <div class="section-badge">Learn Anywhere</div>
+    <h2 class="section-title">Best Resources for Every Skill</h2>
+    <p class="section-subtitle">Whether you prefer watching on YouTube or structured courses on premium platforms — we've hand-picked the best for each skill.</p>
+
+    <div class="resources-tabs">
+      <button class="res-tab active" onclick="switchTab(this,'youtube')">
+        <i class="fab fa-youtube"></i> YouTube Channels
+      </button>
+      <button class="res-tab" onclick="switchTab(this,'platforms')">
+        <i class="fas fa-laptop-code"></i> Online Platforms
+      </button>
+      <button class="res-tab" onclick="switchTab(this,'free')">
+        <i class="fas fa-gift"></i> Free Resources
+      </button>
+    </div>
+
+    <div class="resources-grid" id="resourcesGrid">
+      <div class="resource-card">
+        <div class="resource-header">
+          <div class="resource-icon" style="background:rgba(255,0,0,0.15);">▶️</div>
+          <div>
+            <div class="resource-name">Traversy Media</div>
+            <div class="resource-type">YouTube · Web Dev</div>
+          </div>
+        </div>
+        <p class="resource-desc">Practical, real-world projects covering HTML, CSS, JavaScript, React, Node.js and more.</p>
+        <div class="resource-tags"><span class="res-tag">HTML/CSS</span><span class="res-tag">JavaScript</span><span class="res-tag">React</span></div>
+      </div>
+      <div class="resource-card">
+        <div class="resource-header">
+          <div class="resource-icon" style="background:rgba(255,0,0,0.15);">▶️</div>
+          <div>
+            <div class="resource-name">3Blue1Brown</div>
+            <div class="resource-type">YouTube · AI & Math</div>
+          </div>
+        </div>
+        <p class="resource-desc">Stunning visual explanations of neural networks, deep learning, and the maths behind AI.</p>
+        <div class="resource-tags"><span class="res-tag">AI</span><span class="res-tag">Deep Learning</span><span class="res-tag">Maths</span></div>
+      </div>
+      <div class="resource-card">
+        <div class="resource-header">
+          <div class="resource-icon" style="background:rgba(255,0,0,0.15);">▶️</div>
+          <div>
+            <div class="resource-name">Apna College</div>
+            <div class="resource-type">YouTube · Full Stack</div>
+          </div>
+        </div>
+        <p class="resource-desc">Hindi/Urdu-friendly channel covering DSA, web development, and placement prep — hugely popular in South Asia.</p>
+        <div class="resource-tags"><span class="res-tag">DSA</span><span class="res-tag">Java</span><span class="res-tag">Full Stack</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INSTITUTES ===== -->
+  <section class="institutes-section reveal" id="institutes">
+    <div class="section-header-center">
+      <div class="section-badge">Learn Physically in Pakistan</div>
+      <h2 class="section-title">Top IT Institutes Across Pakistan</h2>
+      <p class="section-subtitle">
+        Prefer learning in a classroom? These are the most reputed IT and tech institutes in Pakistan — with addresses and specializations.
+      </p>
+    </div>
+    <div class="institutes-grid">
+      <div class="institute-card">
+        <div class="institute-logo">🎓</div>
+        <div class="institute-name">Aptech Computer Education</div>
+        <div class="institute-city"><i class="fas fa-map-marker-alt"></i> Karachi, Lahore, Islamabad</div>
+        <p class="institute-address">Head Office: Plot 1, SMCHS Commercial Area, Block B, Karachi</p>
+        <div class="institute-tags"><span class="inst-tag">Web Dev</span><span class="inst-tag">Networking</span><span class="inst-tag">AI</span></div>
+      </div>
+      <div class="institute-card">
+        <div class="institute-logo">💻</div>
+        <div class="institute-name">FAST NUCES</div>
+        <div class="institute-city"><i class="fas fa-map-marker-alt"></i> Karachi · Lahore · Islamabad · Peshawar</div>
+        <p class="institute-address">Karachi Campus: ST-4, Sector 17-D, Shah Latif Town, National Highway</p>
+        <div class="institute-tags"><span class="inst-tag">CS Degree</span><span class="inst-tag">AI & Data</span><span class="inst-tag">Research</span></div>
+      </div>
+      <div class="institute-card">
+        <div class="institute-logo">🏛️</div>
+        <div class="institute-name">NUST</div>
+        <div class="institute-city"><i class="fas fa-map-marker-alt"></i> Islamabad · Karachi · Peshawar</div>
+        <p class="institute-address">H-12 Sector, Islamabad — one of Pakistan's top-ranked tech universities</p>
+        <div class="institute-tags"><span class="inst-tag">Engineering</span><span class="inst-tag">Cybersecurity</span><span class="inst-tag">IT</span></div>
+      </div>
+      <div class="institute-card">
+        <div class="institute-logo">⚡</div>
+        <div class="institute-name">NAVTTC Institutes</div>
+        <div class="institute-city"><i class="fas fa-map-marker-alt"></i> Nationwide</div>
+        <p class="institute-address">Government-backed vocational IT training centers across all provinces — subsidized courses</p>
+        <div class="institute-tags"><span class="inst-tag">Free Courses</span><span class="inst-tag">Govt Certified</span><span class="inst-tag">IT Skills</span></div>
+      </div>
+      <div class="institute-card">
+        <div class="institute-logo">🚀</div>
+        <div class="institute-name">Corvit Systems</div>
+        <div class="institute-city"><i class="fas fa-map-marker-alt"></i> Lahore · Karachi · Islamabad</div>
+        <p class="institute-address">Office 12, 2nd Floor, Hafeez Centre, Main Boulevard Gulberg III, Lahore</p>
+        <div class="institute-tags"><span class="inst-tag">Networking</span><span class="inst-tag">Cloud</span><span class="inst-tag">Security</span></div>
+      </div>
+      <div class="institute-card">
+        <div class="institute-logo">🌟</div>
+        <div class="institute-name">PITB Skills Program</div>
+        <div class="institute-city"><i class="fas fa-map-marker-alt"></i> Punjab-Wide</div>
+        <p class="institute-address">Punjab IT Board, Arfa Software Technology Park, Ferozepur Road, Lahore</p>
+        <div class="institute-tags"><span class="inst-tag">Freelancing</span><span class="inst-tag">Mobile Dev</span><span class="inst-tag">E-Commerce</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section reveal">
+    <h2 class="cta-title">Your Future Starts Today.<br>Don't Wait for Tomorrow.</h2>
+    <p class="cta-sub">Join thousands of Pakistani students already building in-demand skills — completely free.</p>
+    <div class="cta-btns">
+      <a href="skills.html" class="btn-cta-white"><i class="fas fa-bolt"></i> Explore Skills Now</a>
+      <a href="#institutes" class="btn-cta-outline-white"><i class="fas fa-map-marker-alt"></i> Find Institutes Near Me</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-wrap">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L8 8H3l4 4-2 6 7-4 7 4-2-6 4-4h-5L12 2z" fill="white" opacity=".9" />
+              <circle cx="12" cy="12" r="2.5" fill="white" />
+            </svg>
+          </div>
+          <div class="logo-text">
+            <strong>VisionPath</strong>
+            <span>Discover · Learn · Lead</span>
+          </div>
+        </a>
+        <p>Pakistan's #1 platform for discovering in-demand tech skills and the best places to learn them — online or in person.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="skills.html">Top Skills</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#institutes">Institutes</a></li>
+          <li><a href="#resources">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Learn</h5>
+        <ul>
+          <li><a href="#">YouTube Channels</a></li>
+          <li><a href="#">Online Platforms</a></li>
+          <li><a href="#">Free Resources</a></li>
+          <li><a href="Roadmap.html">Career Roadmaps</a></li>
+          <li><a href="#">Skill Assessments</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Salary Trends</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 VisionPath. Made with <i class="fas fa-heart" style="color:#A78BFA;"></i> for students of Pakistan.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeIcon.className = 'fas fa-sun';
+    }
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      if (current === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        themeIcon.className = 'fas fa-moon';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeIcon.className = 'fas fa-sun';
+      }
+    });
+
+    // Nav scroll effect
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+      });
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Resource tabs
+    const resourceData = {
+      youtube: [
+        { icon: '▶️', iconBg: 'rgba(255,0,0,0.15)', name: 'Traversy Media', type: 'YouTube · Web Dev', desc: 'Practical, real-world projects covering HTML, CSS, JavaScript, React, Node.js and more.', tags: ['HTML/CSS', 'JavaScript', 'React'] },
+        { icon: '▶️', iconBg: 'rgba(255,0,0,0.15)', name: '3Blue1Brown', type: 'YouTube · AI & Math', desc: 'Stunning visual explanations of neural networks and the maths behind AI.', tags: ['AI', 'Deep Learning', 'Maths'] },
+        { icon: '▶️', iconBg: 'rgba(255,0,0,0.15)', name: 'Apna College', type: 'YouTube · Full Stack', desc: 'Urdu-friendly channel covering DSA, web dev, and placement prep.', tags: ['DSA', 'Java', 'Full Stack'] }
+      ],
+      platforms: [
+        { icon: '🎓', iconBg: 'rgba(124,58,237,0.15)', name: 'Coursera', type: 'Online Platform · Certified', desc: 'University-grade courses from Google, IBM, Stanford — earn industry-recognised certificates.', tags: ['Certificates', 'AI', 'Data Science'] },
+        { icon: '🔥', iconBg: 'rgba(245,158,11,0.15)', name: 'Udemy', type: 'Online Platform · Affordable', desc: 'Thousands of practical skill courses at affordable prices — lifetime access.', tags: ['Web Dev', 'Design', 'Cloud'] },
+        { icon: '💡', iconBg: 'rgba(59,130,246,0.15)', name: 'edX', type: 'Online Platform · University', desc: 'Free audit options for courses from MIT, Harvard, and top global universities.', tags: ['Free Audit', 'CS', 'Engineering'] }
+      ],
+      free: [
+        { icon: '🆓', iconBg: 'rgba(16,185,129,0.15)', name: 'freeCodeCamp', type: 'Free Resource · Web Dev', desc: '3,000+ hours of free curriculum — from HTML to full-stack JavaScript with certifications.', tags: ['HTML', 'JavaScript', 'Python'] },
+        { icon: '📚', iconBg: 'rgba(124,58,237,0.15)', name: 'The Odin Project', type: 'Free Resource · Web Dev', desc: 'Open-source full-stack curriculum — project-based and completely free.', tags: ['Full Stack', 'Open Source', 'Projects'] },
+        { icon: '🤖', iconBg: 'rgba(239,68,68,0.15)', name: 'fast.ai', type: 'Free Resource · AI & ML', desc: 'Top-down practical deep learning courses — free, open-source, used worldwide.', tags: ['AI', 'PyTorch', 'Free'] }
+      ]
+    };
+
+    function switchTab(btn, tab) {
+      document.querySelectorAll('.res-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      const grid = document.getElementById('resourcesGrid');
+      grid.style.opacity = '0';
+      setTimeout(() => {
+        grid.innerHTML = resourceData[tab].map(r => `
+          <div class="resource-card">
+            <div class="resource-header">
+              <div class="resource-icon" style="background:${r.iconBg};">${r.icon}</div>
+              <div>
+                <div class="resource-name">${r.name}</div>
+                <div class="resource-type">${r.type}</div>
+              </div>
+            </div>
+            <p class="resource-desc">${r.desc}</p>
+            <div class="resource-tags">${r.tags.map(t => `<span class="res-tag">${t}</span>`).join('')}</div>
+          </div>
+        `).join('');
+        grid.style.opacity = '1';
+      }, 180);
+    }
+  </script>
+</body>
+</html>

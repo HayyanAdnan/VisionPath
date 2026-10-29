@@ -1,0 +1,3437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Skills Leading the Job Market – VisionPath</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* ═══════════════════════════════════════════
+           ROOT VARIABLES - LIGHT MODE (DEFAULT)
+        ═══════════════════════════════════════════ */
+        :root {
+            --purple: #7C3AED;
+            --purple-mid: #8B5CF6;
+            --purple-light: #A78BFA;
+            --purple-pale: #EDE9FE;
+            --purple-bg: #F5F3FF;
+            --white: #FFFFFF;
+            --navy: #1E1040;
+            --dark: #2D2547;
+            --gray: #6B7280;
+            --light-gray: #F9FAFB;
+            --border: #E5E0F8;
+            --green: #10B981;
+            --blue: #3B82F6;
+            --orange: #F59E0B;
+            --pink: #EC4899;
+            --red: #EF4444;
+            --teal: #0D9488;
+            --rose: #F43F5E;
+            --amber: #D97706;
+            --indigo: #4F46E5;
+            --cyan: #06B6D4;
+            --lime: #65A30D;
+            --radius: 16px;
+            --radius-lg: 24px;
+            --shadow: 0 4px 24px rgba(124, 58, 237, 0.10);
+            --shadow-md: 0 8px 40px rgba(124, 58, 237, 0.18);
+            --shadow-lg: 0 16px 60px rgba(124, 58, 237, 0.22);
+            --font-display: 'Poppins', sans-serif;
+            --font-body: 'Poppins', sans-serif;
+            --font-alt: 'Poppins', sans-serif;
+            --bg-body: #FFFFFF;
+            --text-body: #2D2547;
+            --bg-nav: rgba(255, 255, 255, 0.92);
+            --bg-mobile: #FFFFFF;
+            --bg-hero: linear-gradient(155deg, #FDFCFF 0%, #F0ECFF 50%, #EAE3FF 100%);
+            --bg-skills: #FFFFFF;
+            --bg-cta: linear-gradient(135deg, var(--purple) 0%, #5B21B6 100%);
+            --bg-footer: var(--navy);
+            --text-footer: #CBD5E1;
+            --border-light: var(--border);
+            --card-bg: #FFFFFF;
+            --card-shadow: var(--shadow);
+            --text-muted: var(--gray);
+            --tag-bg: var(--purple-pale);
+            --tag-color: var(--purple);
+            --input-bg: white;
+            --input-border: var(--border);
+            --transition-speed: 0.3s;
+        }
+
+        /* ═══════════════════════════════════════════
+           DARK MODE VARIABLES
+        ═══════════════════════════════════════════ */
+        [data-theme="dark"] {
+            --bg-body: #0F0A1A;
+            --text-body: #E5E0F8;
+            --bg-nav: rgba(18, 12, 30, 0.92);
+            --bg-mobile: #1A1230;
+            --bg-hero: linear-gradient(155deg, #120C20 0%, #1A1230 50%, #221A3A 100%);
+            --bg-skills: #0F0A1A;
+            --bg-cta: linear-gradient(135deg, #5B21B6 0%, #6D28D9 40%, #4C1D95 100%);
+            --bg-footer: #0A0618;
+            --text-footer: #A8A0C8;
+            --border-light: #2D1F4A;
+            --card-bg: #1A1230;
+            --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+            --text-muted: #A8A0C8;
+            --tag-bg: rgba(124, 58, 237, 0.2);
+            --tag-color: #A78BFA;
+            --light-gray: #1A1230;
+            --white: #1A1230;
+            --navy: #E5E0F8;
+            --dark: #E5E0F8;
+            --gray: #A8A0C8;
+            --border: #2D1F4A;
+            --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 8px 40px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 16px 60px rgba(0, 0, 0, 0.5);
+            --purple-pale: rgba(124, 58, 237, 0.2);
+            --purple-bg: rgba(124, 58, 237, 0.1);
+            --input-bg: #1A1230;
+            --input-border: #2D1F4A;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-body);
+            background: var(--bg-body);
+            overflow-x: hidden;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+        }
+
+        /* ═══════════════════════════════════════════
+           ANIMATIONS
+        ═══════════════════════════════════════════ */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.35);
+            }
+
+            70% {
+                box-shadow: 0 0 0 18px rgba(124, 58, 237, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+            }
+        }
+
+        .anim-fadeUp {
+            animation: fadeUp .7s ease both;
+        }
+
+        .anim-d1 {
+            animation-delay: .1s;
+        }
+
+        .anim-d2 {
+            animation-delay: .25s;
+        }
+
+        .anim-d3 {
+            animation-delay: .4s;
+        }
+
+        /* ═══════════════════════════════════════════
+           SCROLLBAR
+        ═══════════════════════════════════════════ */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-body);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--purple-light);
+            border-radius: 10px;
+        }
+
+        /* ═══════════════════════════════════════════
+           NAVBAR
+        ═══════════════════════════════════════════ */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: var(--bg-nav);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-light);
+            padding: 0 1.5rem;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 20px rgba(124, 58, 237, 0.07);
+            transition: box-shadow .3s, background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 28px rgba(124, 58, 237, 0.14);
+        }
+        [data-theme="dark"] nav.scrolled {
+            box-shadow: 0 4px 28px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.18) 0%, transparent 60%);
+        }
+
+        .logo-icon svg {
+            position: relative;
+            z-index: 1;
+            width: 20px;
+            height: 20px;
+        }
+
+        .logo-text {
+            line-height: 1.18;
+        }
+
+        .logo-text strong {
+            display: block;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--navy);
+            letter-spacing: -.3px;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .logo-text span {
+            font-size: 0.65rem;
+            color: var(--purple);
+            font-weight: 600;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            list-style: none;
+            flex-wrap: nowrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 3px;
+            transition: color .2s;
+            white-space: nowrap;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--purple);
+            border-radius: 2px;
+            transition: width .25s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--purple);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .btn-outline {
+            padding: 8px 16px;
+            border: 1.5px solid var(--purple);
+            border-radius: 8px;
+            background: transparent;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--purple);
+            cursor: pointer;
+            transition: all .2s;
+            text-decoration: none;
+            white-space: nowrap;
+            font-family: var(--font-body);
+        }
+
+        .btn-outline:hover {
+            background: var(--purple);
+            color: white;
+        }
+
+        .btn-primary {
+            padding: 8px 16px;
+            background: var(--purple);
+            border: none;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: white;
+            cursor: pointer;
+            transition: all .2s;
+            text-decoration: none;
+            white-space: nowrap;
+            font-family: var(--font-body);
+            box-shadow: 0 4px 14px rgba(124, 58, 237, 0.30);
+        }
+
+        .btn-primary:hover {
+            background: #6D28D9;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(124, 58, 237, 0.38);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: none;
+            border: 1.5px solid var(--border-light);
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--text-body);
+            transition: all .3s;
+            padding: 0;
+            font-family: var(--font-body);
+            flex-shrink: 0;
+        }
+
+        .theme-toggle:hover {
+            background: var(--purple-pale);
+            border-color: var(--purple);
+        }
+
+        [data-theme="dark"] .theme-toggle {
+            border-color: #2D1F4A;
+        }
+        [data-theme="dark"] .theme-toggle:hover {
+            background: rgba(124, 58, 237, 0.2);
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2.5px;
+            background: var(--text-body);
+            border-radius: 2px;
+            transition: all .3s, background-color var(--transition-speed) ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: var(--bg-mobile);
+            z-index: 199;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            gap: 0.6rem;
+            border-top: 2px solid var(--purple-pale);
+            transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+            animation: fadeUp .25s ease;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--text-body);
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--border-light);
+            transition: color .2s, border-color var(--transition-speed) ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--purple);
+        }
+
+        .mobile-menu .mobile-btns {
+            display: flex;
+            gap: 10px;
+            padding-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* ═══════════════════════════════════════════
+           PAGE HERO / HEADER
+        ═══════════════════════════════════════════ */
+        .page-hero {
+            background: var(--bg-hero);
+            padding: 3.5rem 2rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: background var(--transition-speed) ease;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(167, 139, 250, 0.22) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: -60px;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            transition: color var(--transition-speed) ease;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a {
+            color: var(--purple);
+            text-decoration: none;
+            transition: opacity .2s;
+        }
+
+        .breadcrumb a:hover {
+            opacity: .7;
+        }
+
+        .breadcrumb i {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+        }
+
+        .page-hero-inner {
+            max-width: 700px;
+        }
+
+        /* ═══════════════════════════════════════════
+           SECTION COMMONS
+        ═══════════════════════════════════════════ */
+        .section-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--purple);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: var(--purple-pale);
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-bottom: 0.8rem;
+            transition: background var(--transition-speed) ease, color var(--transition-speed) ease;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 3vw, 2.4rem);
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: .6rem;
+            line-height: 1.2;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .section-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 600px;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .section-header-center {
+            text-align: center;
+        }
+
+        .section-header-center .section-subtitle {
+            margin: 0 auto;
+        }
+
+        /* ═══════════════════════════════════════════
+           LIVE BADGE
+        ═══════════════════════════════════════════ */
+        .skills-live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: #FFF0F0;
+            border: 1px solid #FECACA;
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #DC2626;
+            margin-bottom: 1.2rem;
+        }
+
+        [data-theme="dark"] .skills-live-badge {
+            background: rgba(220, 38, 38, 0.15);
+            border-color: rgba(220, 38, 38, 0.3);
+        }
+
+        .live-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #EF4444;
+            animation: pulse-ring 1.5s infinite;
+        }
+
+        /* ═══════════════════════════════════════════
+           FILTER / SEARCH BAR
+        ═══════════════════════════════════════════ */
+        .skills-controls {
+            padding: 1.5rem 2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            background: var(--bg-skills);
+            transition: background var(--transition-speed) ease;
+        }
+
+        .search-wrap {
+            position: relative;
+            flex: 1;
+            min-width: 180px;
+            max-width: 320px;
+        }
+
+        .search-wrap i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 9px 12px 9px 34px;
+            border: 1.5px solid var(--input-border);
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-family: var(--font-body);
+            color: var(--text-body);
+            background: var(--input-bg);
+            outline: none;
+            transition: border-color .2s, background var(--transition-speed) ease, color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--purple);
+        }
+
+        .filter-pills {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border: 1.5px solid var(--border-light);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            cursor: pointer;
+            background: var(--card-bg);
+            font-family: var(--font-body);
+            transition: all .2s, background var(--transition-speed) ease, color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+            white-space: nowrap;
+        }
+
+        .filter-pill:hover,
+        .filter-pill.active {
+            background: var(--purple);
+            color: white;
+            border-color: var(--purple);
+        }
+
+        .skills-count {
+            margin-left: auto;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            white-space: nowrap;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .skills-count span {
+            color: var(--purple);
+            font-weight: 800;
+        }
+
+        /* ═══════════════════════════════════════════
+           SKILLS SECTION
+        ═══════════════════════════════════════════ */
+        .skills-section {
+            padding: 2rem 2rem 4rem;
+            background: var(--bg-skills);
+            transition: background var(--transition-speed) ease;
+        }
+
+        .skills-category-label {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .skills-category-label::after {
+            content: '';
+            flex: 1;
+            height: 1.5px;
+            background: var(--border-light);
+            border-radius: 2px;
+            transition: background var(--transition-speed) ease;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border: 1.5px solid var(--border-light);
+            border-radius: var(--radius);
+            padding: 1.4rem 1.2rem;
+            transition: all .28s, background var(--transition-speed) ease, border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--purple), var(--purple-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--purple-light);
+        }
+
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-icon-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+        }
+
+        .skill-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .skill-trend {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 20px;
+        }
+
+        .trend-up {
+            color: #059669;
+            background: #ECFDF5;
+        }
+
+        [data-theme="dark"] .trend-up {
+            background: rgba(16, 185, 129, 0.15);
+        }
+
+        .trend-hot {
+            color: #DC2626;
+            background: #FFF5F5;
+        }
+
+        [data-theme="dark"] .trend-hot {
+            background: rgba(220, 38, 38, 0.15);
+        }
+
+        .trend-new {
+            color: #7C3AED;
+            background: var(--purple-pale);
+        }
+
+        .skill-name {
+            font-family: var(--font-alt);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 3px;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .skill-category {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .skill-demand-bar {
+            height: 5px;
+            border-radius: 3px;
+            background: var(--purple-pale);
+            margin-bottom: 5px;
+            overflow: hidden;
+            transition: background var(--transition-speed) ease;
+        }
+
+        .skill-demand-fill {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--purple), var(--purple-light));
+            transition: width 1s ease;
+        }
+
+        .skill-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .skill-meta span {
+            color: var(--purple);
+            font-weight: 700;
+        }
+
+        /* ═══════════════════════════════════════════
+           MODAL
+        ═══════════════════════════════════════════ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            animation: fadeUp 0.3s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 0.8rem;
+            right: 1rem;
+            background: var(--bg-body);
+            border: 1px solid var(--border-light);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: var(--text-body);
+            transition: all .2s;
+            font-family: var(--font-body);
+        }
+
+        .modal-close:hover {
+            background: var(--purple-pale);
+            border-color: var(--purple);
+            transform: rotate(90deg);
+        }
+
+        .modal-icon {
+            font-size: 3rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-body);
+            margin-bottom: 0.2rem;
+        }
+
+        .modal-category {
+            font-size: 0.8rem;
+            color: var(--purple);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+            background: var(--purple-pale);
+            padding: 3px 12px;
+            border-radius: 20px;
+        }
+
+        .modal-desc {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        .modal-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .modal-detail-item {
+            background: var(--bg-body);
+            border-radius: var(--radius);
+            padding: 0.7rem 0.9rem;
+            border: 1px solid var(--border-light);
+        }
+
+        .modal-detail-item .label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .modal-detail-item .value {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-body);
+            margin-top: 2px;
+        }
+
+        .modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 1.2rem;
+        }
+
+        .modal-tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 3px 12px;
+            border-radius: 20px;
+            background: var(--tag-bg);
+            color: var(--tag-color);
+        }
+
+        .modal-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all .25s;
+            text-decoration: none;
+            border: none;
+            font-family: var(--font-body);
+        }
+
+        .modal-btn-primary {
+            background: var(--purple);
+            color: white;
+            box-shadow: 0 4px 14px rgba(124, 58, 237, 0.30);
+        }
+
+        .modal-btn-primary:hover {
+            background: #6D28D9;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(124, 58, 237, 0.38);
+        }
+
+        .modal-btn-secondary {
+            background: var(--bg-body);
+            color: var(--text-body);
+            border: 1.5px solid var(--border-light);
+        }
+
+        .modal-btn-secondary:hover {
+            background: var(--purple-pale);
+            border-color: var(--purple);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .modal-trend-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 12px;
+            border-radius: 20px;
+        }
+
+        .modal-trend-badge.hot {
+            background: #FFF5F5;
+            color: #DC2626;
+        }
+        .modal-trend-badge.rising {
+            background: #ECFDF5;
+            color: #059669;
+        }
+        .modal-trend-badge.emerging {
+            background: var(--purple-pale);
+            color: var(--purple);
+        }
+
+        [data-theme="dark"] .modal-trend-badge.hot {
+            background: rgba(220, 38, 38, 0.15);
+        }
+        [data-theme="dark"] .modal-trend-badge.rising {
+            background: rgba(16, 185, 129, 0.15);
+        }
+        [data-theme="dark"] .modal-trend-badge.emerging {
+            background: rgba(124, 58, 237, 0.2);
+        }
+
+        /* ── Modal scrollbar ── */
+        .modal-content::-webkit-scrollbar {
+            width: 5px;
+        }
+        .modal-content::-webkit-scrollbar-track {
+            background: var(--bg-body);
+        }
+        .modal-content::-webkit-scrollbar-thumb {
+            background: var(--purple-light);
+            border-radius: 10px;
+        }
+
+        /* ═══════════════════════════════════════════
+           CTA SECTION
+        ═══════════════════════════════════════════ */
+        .cta-section {
+            background: var(--bg-cta);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: background var(--transition-speed) ease;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            right: -60px;
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.8rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-sub {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.80);
+            max-width: 520px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-btns {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-cta-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: var(--purple);
+            font-weight: 800;
+            font-size: 0.9rem;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all .25s;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+            font-family: var(--font-body);
+        }
+
+        .btn-cta-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+        }
+
+        .btn-cta-outline-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.55);
+            transition: all .25s;
+            font-family: var(--font-body);
+        }
+
+        .btn-cta-outline-white:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ═══════════════════════════════════════════
+           FOOTER
+        ═══════════════════════════════════════════ */
+        footer {
+            background: var(--bg-footer);
+            padding: 3rem 2rem 1.5rem;
+            transition: background var(--transition-speed) ease;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 1.8rem;
+        }
+
+        .footer-brand .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand .logo-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+        }
+
+        .footer-brand .logo-text strong {
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .footer-brand .logo-text span {
+            color: var(--purple-light);
+        }
+
+        .footer-brand p {
+            font-size: 0.8rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.50);
+            margin-bottom: 1.2rem;
+            max-width: 280px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.07);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-footer);
+            text-decoration: none;
+            transition: all .2s;
+            font-size: 0.85rem;
+        }
+
+        .social-links a:hover {
+            background: var(--purple);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-col h5 {
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: var(--font-alt);
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-col h5::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 24px;
+            height: 2px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--purple), var(--purple-light));
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: .5rem;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.50);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: all .2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--purple-light);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal a {
+            color: rgba(255, 255, 255, 0.35);
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        .footer-legal a:hover {
+            color: var(--purple-light);
+        }
+
+        /* ═══════════════════════════════════════════
+           SCROLL REVEAL
+        ═══════════════════════════════════════════ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── No Results ── */
+        #noResults {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-muted);
+        }
+
+        #noResults div:first-child {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+        #noResults div:nth-child(2) {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: .4rem;
+        }
+
+        /* ═══════════════════════════════════════════
+           RESPONSIVE BREAKPOINTS
+        ═══════════════════════════════════════════ */
+
+        @media (max-width: 1200px) {
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .footer-top {
+                grid-template-columns: 2fr 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            nav {
+                padding: 0 1.2rem;
+            }
+            .nav-links,
+            .nav-actions .nav-auth-group {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .nav-actions .theme-toggle {
+                display: flex;
+            }
+
+            .page-hero {
+                padding: 2.5rem 1.5rem 2rem;
+            }
+            .skills-controls {
+                padding: 1.2rem 1.5rem 0;
+            }
+            .skills-section {
+                padding: 1.5rem 1.5rem 3rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            footer {
+                padding: 2.5rem 1.5rem 1.5rem;
+            }
+
+            .modal-content {
+                max-width: 90%;
+                padding: 1.5rem;
+            }
+            .modal-detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-hero {
+                padding: 2rem 1.2rem 1.5rem;
+            }
+            .page-hero-inner .section-title {
+                font-size: 1.5rem;
+            }
+            .page-hero-inner .section-subtitle {
+                font-size: 0.85rem;
+            }
+
+            .skills-controls {
+                padding: 1rem 1.2rem 0;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-wrap {
+                max-width: 100%;
+                min-width: unset;
+            }
+            .skills-count {
+                margin-left: 0;
+                text-align: center;
+            }
+            .filter-pills {
+                justify-content: center;
+            }
+            .filter-pill {
+                font-size: 0.7rem;
+                padding: 5px 12px;
+            }
+
+            .skills-section {
+                padding: 1.2rem 1.2rem 2.5rem;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .skill-card {
+                padding: 1.2rem 1rem;
+            }
+
+            .skills-category-label {
+                font-size: 0.85rem;
+                margin-top: 1.5rem;
+            }
+
+            .cta-section {
+                padding: 3rem 1.2rem;
+            }
+            .cta-title {
+                font-size: 1.4rem;
+            }
+            .cta-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn-cta-white,
+            .btn-cta-outline-white {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-legal {
+                justify-content: center;
+            }
+
+            .modal-content {
+                padding: 1.2rem;
+                margin: 0.5rem;
+            }
+            .modal-title {
+                font-size: 1.2rem;
+            }
+            .modal-icon {
+                font-size: 2.5rem;
+            }
+            .modal-actions {
+                flex-direction: column;
+            }
+            .modal-actions .modal-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .modal-detail-item .value {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .nav-logo .logo-text strong {
+                font-size: 0.85rem;
+            }
+            .nav-logo .logo-text span {
+                font-size: 0.55rem;
+            }
+            .logo-icon {
+                width: 34px;
+                height: 34px;
+            }
+            .logo-icon svg {
+                width: 16px;
+                height: 16px;
+            }
+            .filter-pill {
+                font-size: 0.65rem;
+                padding: 4px 10px;
+            }
+            .skill-name {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Extra large monitors */
+        @media (min-width: 1600px) {
+            .page-hero {
+                padding: 5rem 10rem 4rem;
+            }
+            .skills-controls {
+                padding: 2rem 10rem 0;
+            }
+            .skills-section {
+                padding: 2.5rem 10rem 5rem;
+            }
+            .cta-section {
+                padding: 5rem 10rem;
+            }
+            footer {
+                padding: 4rem 10rem 2rem;
+            }
+            .skills-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.8rem;
+            }
+            .page-hero-inner .section-title {
+                font-size: 3rem;
+            }
+        }
+    
+    /* ============================================
+       RESPONSIVE HARDENING PATCH (added)
+       Nothing above this point was removed or changed.
+    ============================================ */
+
+    /* --- FIX: navbar overlaps/breaks between ~993px and ~1300px
+       because the full desktop nav (9 links + auth buttons) needs
+       more room than the old 992px cutoff gave it. Switch to the
+       mobile hamburger menu earlier, before it has a chance to
+       overlap, using the SAME classes the page already defines. --- */
+    @media (max-width: 1300px) {
+      .nav-links,
+      .nav-actions .nav-auth-group {
+        display: none !important;
+      }
+      .hamburger {
+        display: flex !important;
+      }
+      .nav-actions .theme-toggle {
+        display: flex !important;
+      }
+      /* FIX: nav uses justify-content:space-between across its 3
+         top-level children (logo, nav-actions, hamburger). With
+         nav-links removed from flow, that space-between pushed the
+         moon button into the middle of the bar, away from the
+         hamburger. Pull nav-actions + hamburger together as one
+         right-aligned group instead. */
+      .nav-actions {
+        margin-left: auto;
+        gap: 10px;
+      }
+      .hamburger {
+        margin-left: 10px;
+      }
+    }
+
+    /* --- General safety net so media, tables, and form controls
+       never force horizontal scrolling on any device. --- */
+    img, video, iframe, embed, object {
+      max-width: 100%;
+      height: auto;
+    }
+    table {
+      max-width: 100%;
+    }
+    input, select, textarea, button {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    pre, code {
+      overflow-x: auto;
+    }
+
+    /* --- Fine-tuning for tablets in the 993-1300px gap so spacing
+       still feels intentional now that the mobile menu is active
+       there (mirrors the page's own >=992px mobile styling). --- */
+    @media (max-width: 1300px) and (min-width: 993px) {
+      nav { padding: 0 1.5rem; }
+    }
+
+    /* --- Extra fine-tuning for very small phones --- */
+    @media (max-width: 400px) {
+      [class*="hero-title"],
+      [class*="page-title"] {
+        font-size: clamp(1.3rem, 7.5vw, 1.6rem) !important;
+        line-height: 1.25 !important;
+      }
+      [class*="section-title"] {
+        font-size: clamp(1.15rem, 6vw, 1.35rem) !important;
+      }
+      [class*="hero-desc"],
+      [class*="hero-sub"],
+      [class*="page-sub"] {
+        font-size: 0.82rem !important;
+      }
+    }
+
+    @media (max-width: 340px) {
+      [class*="hero-title"],
+      [class*="page-title"] {
+        font-size: 1.25rem !important;
+      }
+      body {
+        font-size: 0.92rem;
+      }
+    }
+
+  
+    /* --- FIX: theme-toggle (moon/sun) button was a fixed 38px
+       circle at every screen size. Scale it down in step with the
+       rest of the nav on smaller screens, and guarantee the icon
+       glyph stays perfectly centered at every size. --- */
+    .theme-toggle {
+      line-height: 1;
+    }
+    .theme-toggle i,
+    #themeIcon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1em;
+      height: 1em;
+    }
+    @media (max-width: 480px) {
+      .theme-toggle {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.85rem !important;
+      }
+    }
+    @media (max-width: 340px) {
+      .theme-toggle {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.75rem !important;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+    <!-- ══ NAVBAR ══ -->
+    <nav id="mainNav">
+        <a class="nav-logo" href="index.html">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L8 8H3l4 4-2 6 7-4 7 4-2-6 4-4h-5L12 2z" fill="white" opacity=".9" />
+                    <circle cx="12" cy="12" r="2.5" fill="white" />
+                </svg>
+            </div>
+            <div class="logo-text">
+                <strong>VisionPath</strong>
+                <span>Discover · Learn · Lead</span>
+            </div>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="skills.html" class="active">Top Skills</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="Roadmap.html">Roadmap</a></li>
+            <li><a href="index.html#resources">Resources</a></li>
+            <li><a href="index.html#institutes">Institutes</a></li>
+            <li><a href="campare.html">Compare Careers</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Support</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            <span id="navLoggedOut" class="nav-auth-group">
+                <a href="login.php" class="btn-outline">Log In</a>
+                <a href="register.php" class="btn-primary">Get Started</a>
+            </span>
+            <span id="navLoggedIn" class="nav-auth-group" style="display:none;">
+                <a href="logout.php" class="btn-outline" style="color:#DC2626; border-color:#DC2626;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </span>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="skills.html">Top Skills</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="Roadmap.html">Roadmap</a>
+        <a href="index.html#resources">Resources</a>
+        <a href="index.html#institutes">Institutes in Pakistan</a>
+        <a href="campare.html">Compare Careers</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Support</a>
+
+        <div class="mobile-btns" id="navLoggedOutMobile">
+            <a href="login.php" class="btn-outline" style="flex:1;text-align:center;padding:11px;">Log In</a>
+            <a href="register.php" class="btn-primary" style="flex:1;text-align:center;padding:11px;">Get Started</a>
+        </div>
+        <div class="mobile-btns" id="navLoggedInMobile" style="display:none;">
+            <a href="logout.php" class="btn-outline" style="flex:1;text-align:center;padding:11px;color:#DC2626;border-color:#DC2626;">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+    </div>
+
+    <!-- ══ PAGE HERO ══ -->
+    <div class="page-hero">
+        <div class="breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Skills</span>
+        </div>
+        <div class="page-hero-inner anim-fadeUp">
+            <div class="skills-live-badge">
+                <span class="live-dot"></span>
+                Live Data — Updated Today
+            </div>
+            <div class="section-badge">Most In-Demand Skills</div>
+            <h1 class="section-title" style="font-size:clamp(1.8rem,4vw,3rem);">Skills Leading the Job Market</h1>
+            <p class="section-subtitle">
+                Our AI scans thousands of job postings daily to surface the skills hiring managers want most right now —
+                and in the coming years. Browse 80+ in-demand skills across every domain. Click any skill for detailed information.
+            </p>
+        </div>
+    </div>
+
+    <!-- ══ FILTER / SEARCH ══ -->
+    <div class="skills-controls reveal">
+        <div class="search-wrap">
+            <i class="fas fa-search"></i>
+            <input type="text" class="search-input" id="skillSearch" placeholder="Search skills…" oninput="filterSkills()">
+        </div>
+        <div class="filter-pills">
+            <button class="filter-pill active" onclick="setFilter(this,'all')">All</button>
+            <button class="filter-pill" onclick="setFilter(this,'ai')">AI & Data</button>
+            <button class="filter-pill" onclick="setFilter(this,'web')">Web Dev</button>
+            <button class="filter-pill" onclick="setFilter(this,'mobile')">Mobile</button>
+            <button class="filter-pill" onclick="setFilter(this,'cloud')">Cloud & DevOps</button>
+            <button class="filter-pill" onclick="setFilter(this,'design')">Design</button>
+            <button class="filter-pill" onclick="setFilter(this,'security')">Security</button>
+            <button class="filter-pill" onclick="setFilter(this,'emerging')">Emerging</button>
+            <button class="filter-pill" onclick="setFilter(this,'healthcare')">🏥 Healthcare</button>
+            <button class="filter-pill" onclick="setFilter(this,'education')">📚 Education</button>
+            <button class="filter-pill" onclick="setFilter(this,'business')">💼 Business</button>
+            <button class="filter-pill" onclick="setFilter(this,'arts')">🎨 Arts & Media</button>
+            <button class="filter-pill" onclick="setFilter(this,'science')">🔬 Science</button>
+            <button class="filter-pill" onclick="setFilter(this,'engineering')">⚙️ Engineering</button>
+        </div>
+        <div class="skills-count">Showing <span id="visibleCount">0</span> skills</div>
+    </div>
+
+    <!-- ══ SKILLS SECTION ══ -->
+    <section class="skills-section reveal" id="skills">
+        <div id="skillsContainer"></div>
+
+        <!-- No Results State -->
+        <div id="noResults" style="display:none;">
+            <div>🔍</div>
+            <div>No skills found</div>
+            <div>Try a different search term or filter.</div>
+        </div>
+    </section>
+
+    <!-- ══ MODAL ══ -->
+    <div class="modal-overlay" id="skillModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div id="modalBody">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ CTA ══ -->
+    <section class="cta-section reveal">
+        <h2 class="cta-title">Your Future Starts Today.<br>Don't Wait for Tomorrow.</h2>
+        <p class="cta-sub">
+            Join thousands of Pakistani students already building in-demand skills — completely free.
+        </p>
+        <div class="cta-btns">
+            <a href="index.html#resources" class="btn-cta-white">
+                <i class="fas fa-bolt"></i> Find Learning Resources
+            </a>
+            <a href="index.html#institutes" class="btn-cta-outline-white">
+                <i class="fas fa-map-marker-alt"></i> Find Institutes Near Me
+            </a>
+        </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="logo-wrap">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L8 8H3l4 4-2 6 7-4 7 4-2-6 4-4h-5L12 2z" fill="white" opacity=".9" />
+                            <circle cx="12" cy="12" r="2.5" fill="white" />
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <strong>VisionPath</strong>
+                        <span>Discover · Learn · Lead</span>
+                    </div>
+                </a>
+                <p>Pakistan's #1 platform for discovering in-demand tech skills and the best places to learn them —
+                    online or in person.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h5>Explore</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Top Skills</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#institutes">Institutes in Pakistan</a></li>
+                    <li><a href="index.html#resources">Learning Resources</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>Learn</h5>
+                <ul>
+                    <li><a href="#">YouTube Channels</a></li>
+                    <li><a href="#">Online Platforms</a></li>
+                    <li><a href="#">Free Resources</a></li>
+                    <li><a href="Roadmap.html">Career Roadmaps</a></li>
+                    <li><a href="#">Skill Assessments</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>Company</h5>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Salary Trends</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>© 2025 VisionPath. Made with <i class="fas fa-heart" style="color:#A78BFA;"></i> for students of
+                Pakistan.</div>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Accessibility</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Theme Toggle ──
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.className = 'fas fa-sun';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeIcon.className = 'fas fa-moon';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.className = 'fas fa-sun';
+            }
+        });
+
+        // ── Check login status ──
+        (async function checkNavAuth() {
+            try {
+                const response = await fetch('api/check_login.php');
+                const data = await response.json();
+                const loggedIn = !!data.loggedIn;
+                document.getElementById('navLoggedOut').style.display = loggedIn ? 'none' : '';
+                document.getElementById('navLoggedIn').style.display = loggedIn ? '' : 'none';
+                document.getElementById('navLoggedOutMobile').style.display = loggedIn ? 'none' : '';
+                document.getElementById('navLoggedInMobile').style.display = loggedIn ? '' : 'none';
+            } catch (error) {
+                console.error('Login check error:', error);
+            }
+        })();
+
+        /* ── Navbar scroll effect ── */
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        /* ── Mobile menu toggle ── */
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        /* ── Scroll reveal ── */
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05 });
+        reveals.forEach(el => revealObserver.observe(el));
+
+        /* ── COMPLETE SKILLS DATA (TECH + NON-TECH) ── */
+        const skillsData = [
+            // ========== ORIGINAL TECH SKILLS ==========
+            // AI & Data
+            {
+                id: 1,
+                name: 'Artificial Intelligence',
+                icon: '🤖',
+                category: 'ai',
+                categoryLabel: 'Artificial Intelligence & Data',
+                demand: 95,
+                growth: '+38% YoY',
+                trend: 'hot',
+                trendLabel: 'Hottest',
+                description: 'Artificial Intelligence is revolutionizing every industry. From self-driving cars to medical diagnosis, AI is at the forefront of technological innovation. Learn machine learning, deep learning, and large language models to build the future.',
+                skills: ['Machine Learning', 'Deep Learning', 'LLMs', 'Neural Networks', 'Python', 'TensorFlow', 'PyTorch'],
+                salary: '$120,000 - $200,000',
+                learningTime: '12-18 months',
+                difficulty: 'Hard',
+                careerPaths: ['AI Engineer', 'ML Engineer', 'Research Scientist', 'Data Scientist']
+            },
+            {
+                id: 2,
+                name: 'Data Science',
+                icon: '📊',
+                category: 'ai',
+                categoryLabel: 'Artificial Intelligence & Data',
+                demand: 84,
+                growth: '+31% YoY',
+                trend: 'up',
+                trendLabel: 'Rising',
+                description: 'Data Science combines statistics, programming, and domain expertise to extract insights from data. Companies across all sectors need data scientists to make data-driven decisions.',
+                skills: ['Python', 'SQL', 'Tableau', 'Power BI', 'Statistics', 'R', 'Pandas', 'NumPy'],
+                salary: '$100,000 - $160,000',
+                learningTime: '10-14 months',
+                difficulty: 'Hard',
+                careerPaths: ['Data Scientist', 'Data Analyst', 'Business Intelligence Analyst', 'Analytics Engineer']
+            },
+            {
+                id: 3,
+                name: 'Generative AI & Prompt Engineering',
+                icon: '🧠',
+                category: 'ai',
+                categoryLabel: 'Artificial Intelligence & Data',
+                demand: 91,
+                growth: '+62% YoY',
+                trend: 'hot',
+                trendLabel: 'Explosive',
+                description: 'Generative AI is transforming how we create content, code, and solve problems. Prompt engineering is the art of crafting inputs to get the best outputs from AI models like ChatGPT, Claude, and Gemini.',
+                skills: ['ChatGPT API', 'LangChain', 'RAG', 'Prompt Design', 'Python', 'LLM Fine-tuning'],
+                salary: '$110,000 - $180,000',
+                learningTime: '6-10 months',
+                difficulty: 'Medium',
+                careerPaths: ['Prompt Engineer', 'AI Product Manager', 'Generative AI Developer']
+            },
+            {
+                id: 4,
+                name: 'Machine Learning Ops',
+                icon: '🔬',
+                category: 'ai',
+                categoryLabel: 'Artificial Intelligence & Data',
+                demand: 79,
+                growth: '+45% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'MLOps bridges the gap between data science and IT operations. It focuses on deploying, monitoring, and maintaining machine learning models in production environments.',
+                skills: ['MLflow', 'Kubeflow', 'Docker', 'Kubernetes', 'AWS SageMaker', 'CI/CD', 'Python'],
+                salary: '$115,000 - $175,000',
+                learningTime: '8-12 months',
+                difficulty: 'Hard',
+                careerPaths: ['MLOps Engineer', 'Platform Engineer', 'DevOps Engineer (ML)']
+            },
+            {
+                id: 5,
+                name: 'Business Intelligence',
+                icon: '📈',
+                category: 'ai',
+                categoryLabel: 'Artificial Intelligence & Data',
+                demand: 75,
+                growth: '+22% YoY',
+                trend: 'up',
+                trendLabel: 'Rising',
+                description: 'Business Intelligence helps organizations make better decisions by turning raw data into meaningful insights. BI professionals create dashboards, reports, and data visualizations that drive strategy.',
+                skills: ['Power BI', 'Tableau', 'Looker', 'Qlik', 'SQL', 'DAX', 'Data Modeling'],
+                salary: '$80,000 - $130,000',
+                learningTime: '6-10 months',
+                difficulty: 'Medium',
+                careerPaths: ['BI Analyst', 'BI Developer', 'Data Analyst', 'Analytics Manager']
+            },
+            {
+                id: 6,
+                name: 'Natural Language Processing',
+                icon: '🗣️',
+                category: 'ai',
+                categoryLabel: 'Artificial Intelligence & Data',
+                demand: 78,
+                growth: '+40% YoY',
+                trend: 'new',
+                trendLabel: 'Emerging',
+                description: 'NLP enables computers to understand, interpret, and generate human language. It powers chatbots, sentiment analysis, translation services, and voice assistants.',
+                skills: ['BERT', 'Transformers', 'spaCy', 'NLTK', 'Python', 'Hugging Face', 'Deep Learning'],
+                salary: '$105,000 - $165,000',
+                learningTime: '10-14 months',
+                difficulty: 'Hard',
+                careerPaths: ['NLP Engineer', 'AI Engineer', 'Data Scientist', 'Research Scientist']
+            },
+            {
+                id: 7,
+                name: 'Computer Vision',
+                icon: '👁️',
+                category: 'ai',
+                categoryLabel: 'Artificial Intelligence & Data',
+                demand: 72,
+                growth: '+33% YoY',
+                trend: 'up',
+                trendLabel: 'Rising',
+                description: 'Computer Vision enables machines to see and interpret the visual world. Applications include autonomous vehicles, facial recognition, medical imaging analysis, and augmented reality.',
+                skills: ['OpenCV', 'YOLO', 'TensorFlow', 'PyTorch', 'Python', 'CNN', 'Image Processing'],
+                salary: '$110,000 - $170,000',
+                learningTime: '12-16 months',
+                difficulty: 'Hard',
+                careerPaths: ['Computer Vision Engineer', 'AI Engineer', 'Robotics Engineer']
+            },
+            {
+                id: 8,
+                name: 'Data Engineering',
+                icon: '🔢',
+                category: 'ai',
+                categoryLabel: 'Artificial Intelligence & Data',
+                demand: 77,
+                growth: '+28% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'Data Engineering focuses on building and maintaining the infrastructure that makes data available for analysis. Data engineers design data pipelines, warehouses, and processing systems.',
+                skills: ['Apache Spark', 'Kafka', 'dbt', 'Airflow', 'SQL', 'Python', 'AWS', 'Snowflake'],
+                salary: '$100,000 - $155,000',
+                learningTime: '8-12 months',
+                difficulty: 'Hard',
+                careerPaths: ['Data Engineer', 'Analytics Engineer', 'ETL Developer', 'Data Architect']
+            },
+
+            // Web Development
+            {
+                id: 9,
+                name: 'Full-Stack Web Dev',
+                icon: '🌐',
+                category: 'web',
+                categoryLabel: 'Web Development',
+                demand: 88,
+                growth: '+24% YoY',
+                trend: 'up',
+                trendLabel: 'Rising',
+                description: 'Full-Stack Web Developers build complete web applications, handling both frontend (user interface) and backend (server, database) development. It\'s one of the most versatile skills in tech.',
+                skills: ['React', 'Node.js', 'Next.js', 'Express', 'MongoDB', 'PostgreSQL', 'TypeScript'],
+                salary: '$85,000 - $140,000',
+                learningTime: '10-14 months',
+                difficulty: 'Medium',
+                careerPaths: ['Full-Stack Developer', 'Web Developer', 'Software Engineer']
+            },
+            {
+                id: 10,
+                name: 'React & Next.js',
+                icon: '⚛️',
+                category: 'web',
+                categoryLabel: 'Web Development',
+                demand: 86,
+                growth: '+26% YoY',
+                trend: 'hot',
+                trendLabel: 'Top Pick',
+                description: 'React is the most popular frontend framework, and Next.js adds powerful features like server-side rendering and static site generation. Together they\'re the modern standard for web development.',
+                skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Redux', 'GraphQL', 'Vercel'],
+                salary: '$90,000 - $145,000',
+                learningTime: '6-10 months',
+                difficulty: 'Medium',
+                careerPaths: ['Frontend Developer', 'React Developer', 'Full-Stack Developer']
+            },
+            {
+                id: 11,
+                name: 'Python Web Dev',
+                icon: '🐍',
+                category: 'web',
+                categoryLabel: 'Web Development',
+                demand: 82,
+                growth: '+20% YoY',
+                trend: 'up',
+                trendLabel: 'Rising',
+                description: 'Python is the fastest-growing programming language for web development. Frameworks like Django and FastAPI make it easy to build secure, scalable web applications quickly.',
+                skills: ['Django', 'FastAPI', 'Flask', 'Python', 'REST APIs', 'PostgreSQL', 'Docker'],
+                salary: '$80,000 - $130,000',
+                learningTime: '6-10 months',
+                difficulty: 'Medium',
+                careerPaths: ['Python Developer', 'Backend Developer', 'Full-Stack Developer']
+            },
+            {
+                id: 12,
+                name: 'Backend Development',
+                icon: '🗄️',
+                category: 'web',
+                categoryLabel: 'Web Development',
+                demand: 80,
+                growth: '+19% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'Backend development focuses on server-side logic, databases, and APIs. It\'s the engine that powers web applications, handling data processing, authentication, and business logic.',
+                skills: ['Node.js', 'Go', 'Spring Boot', 'PostgreSQL', 'MongoDB', 'Docker', 'AWS'],
+                salary: '$85,000 - $135,000',
+                learningTime: '8-12 months',
+                difficulty: 'Medium',
+                careerPaths: ['Backend Developer', 'API Developer', 'Software Engineer']
+            },
+            {
+                id: 13,
+                name: 'Frontend Development',
+                icon: '🎨',
+                category: 'web',
+                categoryLabel: 'Web Development',
+                demand: 83,
+                growth: '+16% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Frontend development is about creating beautiful, responsive user interfaces. It combines design principles with coding to build the visual layer of websites and web applications.',
+                skills: ['HTML', 'CSS', 'JavaScript', 'Vue.js', 'React', 'Tailwind CSS', 'Webpack'],
+                salary: '$75,000 - $120,000',
+                learningTime: '6-8 months',
+                difficulty: 'Easy-Medium',
+                careerPaths: ['Frontend Developer', 'UI Developer', 'Web Designer']
+            },
+            {
+                id: 14,
+                name: 'API Design & GraphQL',
+                icon: '🔌',
+                category: 'web',
+                categoryLabel: 'Web Development',
+                demand: 74,
+                growth: '+21% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'APIs are the backbone of modern software. API designers create interfaces that allow different systems to communicate. GraphQL is emerging as a powerful alternative to REST APIs.',
+                skills: ['REST', 'GraphQL', 'gRPC', 'Swagger', 'Postman', 'API Security', 'Node.js'],
+                salary: '$80,000 - $130,000',
+                learningTime: '4-8 months',
+                difficulty: 'Medium',
+                careerPaths: ['API Developer', 'Backend Developer', 'Solutions Architect']
+            },
+            {
+                id: 15,
+                name: 'Web Performance & SEO',
+                icon: '🚀',
+                category: 'web',
+                categoryLabel: 'Web Development',
+                demand: 67,
+                growth: '+14% YoY',
+                trend: 'new',
+                trendLabel: 'New',
+                description: 'Web Performance and SEO are critical for user experience and visibility. Performance engineers optimize load times and Core Web Vitals, while SEO specialists improve search engine rankings.',
+                skills: ['Core Web Vitals', 'Lighthouse', 'Schema Markup', 'Speed Optimization', 'Analytics'],
+                salary: '$70,000 - $110,000',
+                learningTime: '4-6 months',
+                difficulty: 'Medium',
+                careerPaths: ['Performance Engineer', 'SEO Specialist', 'Web Developer']
+            },
+            {
+                id: 16,
+                name: 'Angular & TypeScript',
+                icon: '🅰️',
+                category: 'web',
+                categoryLabel: 'Web Development',
+                demand: 70,
+                growth: '+12% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Angular is a powerful framework for building enterprise web applications. TypeScript adds static typing to JavaScript, making code more reliable and maintainable.',
+                skills: ['Angular 17+', 'TypeScript', 'RxJS', 'NgRx', 'HTML', 'CSS', 'Angular Material'],
+                salary: '$80,000 - $125,000',
+                learningTime: '8-12 months',
+                difficulty: 'Medium',
+                careerPaths: ['Angular Developer', 'Frontend Developer', 'Full-Stack Developer']
+            },
+
+            // Mobile Development
+            {
+                id: 17,
+                name: 'Mobile App Development',
+                icon: '📱',
+                category: 'mobile',
+                categoryLabel: 'Mobile Development',
+                demand: 76,
+                growth: '+22% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'Mobile app development is one of the fastest-growing fields. With billions of smartphone users, mobile developers are in high demand to build apps for iOS and Android platforms.',
+                skills: ['Flutter', 'React Native', 'Swift', 'Kotlin', 'Firebase', 'App Store Deployment'],
+                salary: '$85,000 - $140,000',
+                learningTime: '8-14 months',
+                difficulty: 'Medium',
+                careerPaths: ['Mobile Developer', 'App Developer', 'Flutter Developer']
+            },
+            {
+                id: 18,
+                name: 'Flutter Development',
+                icon: '🦋',
+                category: 'mobile',
+                categoryLabel: 'Mobile Development',
+                demand: 80,
+                growth: '+32% YoY',
+                trend: 'hot',
+                trendLabel: 'Top Pick',
+                description: 'Flutter is Google\'s UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. It\'s rapidly becoming the go-to choice for cross-platform development.',
+                skills: ['Flutter', 'Dart', 'Firebase', 'Widgets', 'State Management', 'REST APIs'],
+                salary: '$90,000 - $150,000',
+                learningTime: '6-10 months',
+                difficulty: 'Medium',
+                careerPaths: ['Flutter Developer', 'Mobile Developer', 'Cross-Platform Developer']
+            },
+            {
+                id: 19,
+                name: 'Android Development',
+                icon: '🤖',
+                category: 'mobile',
+                categoryLabel: 'Mobile Development',
+                demand: 72,
+                growth: '+15% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Android development remains a strong career choice with over 2.5 billion active Android devices. Modern Android development uses Kotlin and Jetpack Compose for building beautiful apps.',
+                skills: ['Kotlin', 'Jetpack Compose', 'Android Studio', 'Coroutines', 'Room', 'Firebase'],
+                salary: '$80,000 - $130,000',
+                learningTime: '8-12 months',
+                difficulty: 'Medium',
+                careerPaths: ['Android Developer', 'Mobile Developer', 'Software Engineer']
+            },
+            {
+                id: 20,
+                name: 'iOS Development',
+                icon: '🍎',
+                category: 'mobile',
+                categoryLabel: 'Mobile Development',
+                demand: 69,
+                growth: '+18% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'iOS development offers access to a premium market of Apple users. Swift and SwiftUI make it modern and enjoyable to build iOS applications for iPhone, iPad, and Mac.',
+                skills: ['Swift', 'SwiftUI', 'Xcode', 'Core Data', 'Combine', 'ARKit', 'App Store'],
+                salary: '$85,000 - $140,000',
+                learningTime: '8-12 months',
+                difficulty: 'Medium',
+                careerPaths: ['iOS Developer', 'Mobile Developer', 'Swift Developer']
+            },
+
+            // Cloud & DevOps
+            {
+                id: 21,
+                name: 'Cloud Computing',
+                icon: '☁️',
+                category: 'cloud',
+                categoryLabel: 'Cloud Computing & DevOps',
+                demand: 82,
+                growth: '+35% YoY',
+                trend: 'new',
+                trendLabel: 'Booming',
+                description: 'Cloud Computing is the foundation of modern IT. Companies are moving to the cloud for scalability, cost-efficiency, and innovation. AWS, Azure, and Google Cloud skills are in massive demand.',
+                skills: ['AWS', 'Azure', 'Google Cloud', 'Multi-Cloud', 'Cloud Architecture', 'Terraform'],
+                salary: '$100,000 - $160,000',
+                learningTime: '8-12 months',
+                difficulty: 'Medium',
+                careerPaths: ['Cloud Engineer', 'Cloud Architect', 'Solutions Architect']
+            },
+            {
+                id: 22,
+                name: 'DevOps & CI/CD',
+                icon: '🐳',
+                category: 'cloud',
+                categoryLabel: 'Cloud Computing & DevOps',
+                demand: 85,
+                growth: '+38% YoY',
+                trend: 'hot',
+                trendLabel: 'Essential',
+                description: 'DevOps combines development and operations to streamline software delivery. CI/CD pipelines automate building, testing, and deploying code, enabling faster releases with fewer errors.',
+                skills: ['Docker', 'Kubernetes', 'Jenkins', 'GitHub Actions', 'GitLab CI', 'ArgoCD'],
+                salary: '$95,000 - $155,000',
+                learningTime: '8-12 months',
+                difficulty: 'Hard',
+                careerPaths: ['DevOps Engineer', 'Cloud Engineer', 'SRE', 'Platform Engineer']
+            },
+            {
+                id: 23,
+                name: 'Infrastructure as Code',
+                icon: '⚙️',
+                category: 'cloud',
+                categoryLabel: 'Cloud Computing & DevOps',
+                demand: 76,
+                growth: '+30% YoY',
+                trend: 'up',
+                trendLabel: 'Rising',
+                description: 'Infrastructure as Code (IaC) is the practice of managing and provisioning infrastructure through machine-readable definition files. It enables version control, automation, and consistency.',
+                skills: ['Terraform', 'Ansible', 'Pulumi', 'CloudFormation', 'AWS CDK', 'Bicep'],
+                salary: '$90,000 - $145,000',
+                learningTime: '6-10 months',
+                difficulty: 'Medium',
+                careerPaths: ['DevOps Engineer', 'Cloud Engineer', 'Infrastructure Engineer']
+            },
+            {
+                id: 24,
+                name: 'Site Reliability Engineering',
+                icon: '📡',
+                category: 'cloud',
+                categoryLabel: 'Cloud Computing & DevOps',
+                demand: 71,
+                growth: '+27% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'Site Reliability Engineering applies software engineering principles to IT operations. SREs focus on building scalable, reliable, and efficient systems using monitoring, automation, and incident management.',
+                skills: ['Prometheus', 'Grafana', 'Observability', 'SLI/SLO', 'Kubernetes', 'Python', 'Linux'],
+                salary: '$100,000 - $160,000',
+                learningTime: '10-14 months',
+                difficulty: 'Hard',
+                careerPaths: ['SRE', 'DevOps Engineer', 'Cloud Engineer']
+            },
+            {
+                id: 25,
+                name: 'Serverless Architecture',
+                icon: '🧩',
+                category: 'cloud',
+                categoryLabel: 'Cloud Computing & DevOps',
+                demand: 68,
+                growth: '+42% YoY',
+                trend: 'new',
+                trendLabel: 'New',
+                description: 'Serverless computing allows developers to build and run applications without managing servers. It scales automatically and charges only for actual usage, making it cost-effective.',
+                skills: ['AWS Lambda', 'Azure Functions', 'Vercel Edge', 'API Gateway', 'DynamoDB', 'CloudWatch'],
+                salary: '$90,000 - $140,000',
+                learningTime: '6-10 months',
+                difficulty: 'Medium',
+                careerPaths: ['Cloud Developer', 'Serverless Engineer', 'Solutions Architect']
+            },
+            {
+                id: 26,
+                name: 'Microservices & Containers',
+                icon: '🔄',
+                category: 'cloud',
+                categoryLabel: 'Cloud Computing & DevOps',
+                demand: 74,
+                growth: '+29% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'Microservices architecture breaks applications into small, independent services that communicate via APIs. Containers like Docker provide a consistent environment for running these services.',
+                skills: ['Docker Compose', 'Kubernetes Helm', 'Service Mesh', 'Istio', 'REST', 'gRPC'],
+                salary: '$95,000 - $150,000',
+                learningTime: '8-12 months',
+                difficulty: 'Hard',
+                careerPaths: ['Microservices Developer', 'Cloud Engineer', 'DevOps Engineer']
+            },
+
+            // Design
+            {
+                id: 27,
+                name: 'UI/UX Design',
+                icon: '🎨',
+                category: 'design',
+                categoryLabel: 'Design & Creative',
+                demand: 73,
+                growth: '+18% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'UI/UX Design focuses on creating intuitive, user-friendly digital experiences. UX designers research user needs, while UI designers create the visual interface elements.',
+                skills: ['Figma', 'Design Systems', 'Prototyping', 'User Research', 'Wireframing', 'Usability Testing'],
+                salary: '$70,000 - $120,000',
+                learningTime: '6-10 months',
+                difficulty: 'Medium',
+                careerPaths: ['UX Designer', 'UI Designer', 'Product Designer', 'UX Researcher']
+            },
+            {
+                id: 28,
+                name: 'Product Design',
+                icon: '🖌️',
+                category: 'design',
+                categoryLabel: 'Design & Creative',
+                demand: 68,
+                growth: '+14% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Product Design encompasses the entire process of creating products that solve user problems. It combines UX, UI, and business strategy to deliver value to customers.',
+                skills: ['User Research', 'Wireframing', 'Usability Testing', 'Figma', 'Sketch', 'InVision'],
+                salary: '$75,000 - $125,000',
+                learningTime: '6-10 months',
+                difficulty: 'Medium',
+                careerPaths: ['Product Designer', 'UX Designer', 'Design Lead']
+            },
+            {
+                id: 29,
+                name: 'Motion & Interaction Design',
+                icon: '✨',
+                category: 'design',
+                categoryLabel: 'Design & Creative',
+                demand: 60,
+                growth: '+22% YoY',
+                trend: 'new',
+                trendLabel: 'Emerging',
+                description: 'Motion and Interaction Design brings digital products to life with animations and responsive feedback. It enhances user engagement and creates delightful experiences.',
+                skills: ['After Effects', 'Lottie', 'Framer', 'Principle', 'Prototyping', 'Micro-interactions'],
+                salary: '$65,000 - $110,000',
+                learningTime: '4-8 months',
+                difficulty: 'Medium',
+                careerPaths: ['Motion Designer', 'Interaction Designer', 'UX/UI Designer']
+            },
+            {
+                id: 30,
+                name: 'Design Systems',
+                icon: '📐',
+                category: 'design',
+                categoryLabel: 'Design & Creative',
+                demand: 64,
+                growth: '+19% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'Design Systems are collections of reusable components and guidelines that ensure consistency across products. They speed up development and maintain brand coherence.',
+                skills: ['Design Tokens', 'Storybook', 'Component Libraries', 'Figma', 'Atomic Design', 'CSS'],
+                salary: '$70,000 - $115,000',
+                learningTime: '4-8 months',
+                difficulty: 'Medium',
+                careerPaths: ['Design System Designer', 'UI Designer', 'UX Designer']
+            },
+
+            // Security
+            {
+                id: 31,
+                name: 'Cybersecurity',
+                icon: '🔒',
+                category: 'security',
+                categoryLabel: 'Cybersecurity',
+                demand: 80,
+                growth: '+29% YoY',
+                trend: 'hot',
+                trendLabel: 'Critical',
+                description: 'Cybersecurity protects systems, networks, and data from digital attacks. With cyber threats growing, cybersecurity professionals are essential for every organization.',
+                skills: ['Ethical Hacking', 'Cloud Security', 'Penetration Testing', 'Network Security', 'Security Tools'],
+                salary: '$90,000 - $150,000',
+                learningTime: '8-14 months',
+                difficulty: 'Hard',
+                careerPaths: ['Cybersecurity Analyst', 'Security Engineer', 'Penetration Tester', 'Security Consultant']
+            },
+            {
+                id: 32,
+                name: 'Cloud Security',
+                icon: '🛡️',
+                category: 'security',
+                categoryLabel: 'Cybersecurity',
+                demand: 78,
+                growth: '+34% YoY',
+                trend: 'hot',
+                trendLabel: 'High Demand',
+                description: 'Cloud Security is the practice of protecting data, applications, and infrastructure in cloud environments. It\'s one of the fastest-growing security specializations.',
+                skills: ['AWS Security', 'IAM', 'Zero Trust', 'SIEM', 'CSPM', 'Azure Security', 'GCP Security'],
+                salary: '$95,000 - $155,000',
+                learningTime: '8-12 months',
+                difficulty: 'Hard',
+                careerPaths: ['Cloud Security Engineer', 'Security Architect', 'DevSecOps Engineer']
+            },
+            {
+                id: 33,
+                name: 'SOC & Threat Intelligence',
+                icon: '🔍',
+                category: 'security',
+                categoryLabel: 'Cybersecurity',
+                demand: 72,
+                growth: '+26% YoY',
+                trend: 'up',
+                trendLabel: 'Rising',
+                description: 'Security Operations Centers (SOC) monitor and defend against cyber threats. Threat intelligence involves analyzing data to identify and predict potential attacks.',
+                skills: ['SIEM', 'Splunk', 'Incident Response', 'Threat Hunting', 'MITRE ATT&CK', 'Log Analysis'],
+                salary: '$80,000 - $130,000',
+                learningTime: '8-12 months',
+                difficulty: 'Hard',
+                careerPaths: ['SOC Analyst', 'Threat Intelligence Analyst', 'Incident Responder']
+            },
+            {
+                id: 34,
+                name: 'Application Security (AppSec)',
+                icon: '⚔️',
+                category: 'security',
+                categoryLabel: 'Cybersecurity',
+                demand: 69,
+                growth: '+31% YoY',
+                trend: 'new',
+                trendLabel: 'Emerging',
+                description: 'Application Security focuses on building secure software from the ground up. It involves integrating security practices into the software development lifecycle (SDLC).',
+                skills: ['OWASP', 'SAST', 'DAST', 'Secure SDLC', 'Security Testing', 'Threat Modeling'],
+                salary: '$85,000 - $135,000',
+                learningTime: '6-10 months',
+                difficulty: 'Hard',
+                careerPaths: ['AppSec Engineer', 'Security Developer', 'DevSecOps Engineer']
+            },
+
+            // Emerging
+            {
+                id: 35,
+                name: 'Blockchain & Web3',
+                icon: '⛓️',
+                category: 'emerging',
+                categoryLabel: 'Emerging & Future Tech',
+                demand: 65,
+                growth: '+44% YoY',
+                trend: 'new',
+                trendLabel: 'Emerging',
+                description: 'Blockchain and Web3 represent the next generation of the internet. They enable decentralized applications, smart contracts, and digital ownership through cryptocurrency and NFTs.',
+                skills: ['Solidity', 'Ethereum', 'Smart Contracts', 'DeFi', 'Web3.js', 'Rust', 'NFT Standards'],
+                salary: '$95,000 - $160,000',
+                learningTime: '8-14 months',
+                difficulty: 'Hard',
+                careerPaths: ['Blockchain Developer', 'Web3 Developer', 'Smart Contract Engineer']
+            },
+            {
+                id: 36,
+                name: 'Game Development',
+                icon: '🎮',
+                category: 'emerging',
+                categoryLabel: 'Emerging & Future Tech',
+                demand: 62,
+                growth: '+20% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'Game Development combines programming, art, and design to create interactive entertainment. The gaming industry is larger than movies and music combined, with massive job opportunities.',
+                skills: ['Unity', 'Unreal Engine', 'C#', 'C++', 'Game Design', '3D Modeling', 'Animation'],
+                salary: '$70,000 - $120,000',
+                learningTime: '10-16 months',
+                difficulty: 'Hard',
+                careerPaths: ['Game Developer', 'Unity Developer', 'Technical Artist']
+            },
+            {
+                id: 37,
+                name: 'AR/VR Development',
+                icon: '🥽',
+                category: 'emerging',
+                categoryLabel: 'Emerging & Future Tech',
+                demand: 55,
+                growth: '+38% YoY',
+                trend: 'new',
+                trendLabel: 'Future',
+                description: 'Augmented Reality (AR) and Virtual Reality (VR) are transforming how we interact with digital content. From gaming to training to medical applications, AR/VR is creating immersive experiences.',
+                skills: ['ARKit', 'WebXR', 'Unity XR', 'Meta SDK', '3D Modeling', 'Spatial Computing'],
+                salary: '$80,000 - $140,000',
+                learningTime: '10-16 months',
+                difficulty: 'Hard',
+                careerPaths: ['AR/VR Developer', 'XR Engineer', 'Immersive Experience Developer']
+            },
+            {
+                id: 38,
+                name: 'Quantum Computing',
+                icon: '⚛️',
+                category: 'emerging',
+                categoryLabel: 'Emerging & Future Tech',
+                demand: 40,
+                growth: '+55% YoY',
+                trend: 'new',
+                trendLabel: 'Frontier',
+                description: 'Quantum Computing harnesses quantum mechanics to solve problems that are impossible for classical computers. It\'s the frontier of computing with potential in cryptography, drug discovery, and optimization.',
+                skills: ['Qiskit', 'Cirq', 'Quantum Algorithms', 'Linear Algebra', 'Quantum Physics', 'Python'],
+                salary: '$120,000 - $200,000',
+                learningTime: '16-24 months',
+                difficulty: 'Very Hard',
+                careerPaths: ['Quantum Researcher', 'Quantum Software Developer', 'Quantum Algorithm Engineer']
+            },
+            {
+                id: 39,
+                name: 'Robotics & Automation',
+                icon: '🤖',
+                category: 'emerging',
+                categoryLabel: 'Emerging & Future Tech',
+                demand: 58,
+                growth: '+25% YoY',
+                trend: 'hot',
+                trendLabel: 'Hot',
+                description: 'Robotics and Automation are transforming industries from manufacturing to healthcare. Robotics engineers design and build robots, while automation engineers create systems that run without human intervention.',
+                skills: ['ROS', 'Python', 'Embedded Systems', 'C++', 'Computer Vision', 'Control Systems'],
+                salary: '$85,000 - $145,000',
+                learningTime: '12-18 months',
+                difficulty: 'Hard',
+                careerPaths: ['Robotics Engineer', 'Automation Engineer', 'Mechatronics Engineer']
+            },
+            {
+                id: 40,
+                name: 'IoT Development',
+                icon: '🌐',
+                category: 'emerging',
+                categoryLabel: 'Emerging & Future Tech',
+                demand: 61,
+                growth: '+30% YoY',
+                trend: 'new',
+                trendLabel: 'Emerging',
+                description: 'Internet of Things (IoT) connects everyday devices to the internet. IoT developers build smart devices, collect sensor data, and create applications that make our lives more efficient.',
+                skills: ['Raspberry Pi', 'Arduino', 'MQTT', 'Edge AI', 'Sensors', 'C/C++', 'Python', 'AWS IoT'],
+                salary: '$75,000 - $125,000',
+                learningTime: '8-14 months',
+                difficulty: 'Medium-Hard',
+                careerPaths: ['IoT Developer', 'Embedded Engineer', 'Edge AI Engineer']
+            },
+
+            // ========== NEW NON-TECH SKILLS ==========
+            // Healthcare
+            {
+                id: 101,
+                name: 'Medicine & Surgery',
+                icon: '🩺',
+                category: 'healthcare',
+                categoryLabel: '🏥 Healthcare & Medicine',
+                demand: 95,
+                growth: '+12% YoY',
+                trend: 'hot',
+                trendLabel: 'Essential',
+                description: 'Medicine is the science of diagnosing, treating, and preventing disease. Surgeons perform operations to treat injuries, diseases, and deformities. This is one of the most respected and rewarding careers.',
+                skills: ['Anatomy', 'Physiology', 'Pharmacology', 'Surgical Techniques', 'Patient Care', 'Medical Ethics'],
+                salary: '$200,000 - $500,000',
+                learningTime: '8-12 years',
+                difficulty: 'Very Hard',
+                careerPaths: ['Surgeon', 'Physician', 'Medical Specialist', 'General Practitioner']
+            },
+            {
+                id: 102,
+                name: 'Nursing',
+                icon: '👩‍⚕️',
+                category: 'healthcare',
+                categoryLabel: '🏥 Healthcare & Medicine',
+                demand: 92,
+                growth: '+15% YoY',
+                trend: 'hot',
+                trendLabel: 'High Demand',
+                description: 'Nursing is a healthcare profession focused on patient care. Nurses work in hospitals, clinics, and community settings, providing essential medical care and emotional support to patients and their families.',
+                skills: ['Patient Care', 'Medical Knowledge', 'Communication', 'Emergency Response', 'Care Planning'],
+                salary: '$70,000 - $120,000',
+                learningTime: '2-4 years',
+                difficulty: 'Hard',
+                careerPaths: ['Registered Nurse', 'Nurse Practitioner', 'Clinical Nurse Specialist', 'Nurse Educator']
+            },
+            {
+                id: 103,
+                name: 'Dentistry',
+                icon: '🦷',
+                category: 'healthcare',
+                categoryLabel: '🏥 Healthcare & Medicine',
+                demand: 85,
+                growth: '+8% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Dentistry focuses on oral health, including teeth, gums, and the entire oral cavity. Dentists diagnose and treat dental issues, perform surgeries, and help patients maintain good oral hygiene.',
+                skills: ['Dental Surgery', 'Oral Pathology', 'Radiology', 'Patient Care', 'Orthodontics'],
+                salary: '$150,000 - $300,000',
+                learningTime: '6-8 years',
+                difficulty: 'Hard',
+                careerPaths: ['Dentist', 'Orthodontist', 'Oral Surgeon', 'Periodontist']
+            },
+            {
+                id: 104,
+                name: 'Pharmacy',
+                icon: '💊',
+                category: 'healthcare',
+                categoryLabel: '🏥 Healthcare & Medicine',
+                demand: 82,
+                growth: '+6% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Pharmacy is the science of preparing and dispensing medications. Pharmacists ensure patients receive the right medications and understand how to use them safely. They also provide health advice and drug information.',
+                skills: ['Pharmacology', 'Chemistry', 'Patient Counseling', 'Medication Management', 'Drug Safety'],
+                salary: '$100,000 - $150,000',
+                learningTime: '4-6 years',
+                difficulty: 'Hard',
+                careerPaths: ['Pharmacist', 'Clinical Pharmacist', 'Pharmacy Manager', 'Pharmaceutical Researcher']
+            },
+            {
+                id: 105,
+                name: 'Psychology',
+                icon: '🧠',
+                category: 'healthcare',
+                categoryLabel: '🏥 Healthcare & Medicine',
+                demand: 88,
+                growth: '+18% YoY',
+                trend: 'hot',
+                trendLabel: 'Growing',
+                description: 'Psychology is the scientific study of the mind and behavior. Psychologists help people overcome mental health issues, improve their well-being, and understand human behavior. The demand for mental health services is growing rapidly.',
+                skills: ['Counseling', 'Therapy', 'Research', 'Assessment', 'Mental Health', 'Empathy'],
+                salary: '$80,000 - $140,000',
+                learningTime: '6-8 years',
+                difficulty: 'Hard',
+                careerPaths: ['Clinical Psychologist', 'Counseling Psychologist', 'School Psychologist', 'Forensic Psychologist']
+            },
+            {
+                id: 106,
+                name: 'Physical Therapy',
+                icon: '🏋️',
+                category: 'healthcare',
+                categoryLabel: '🏥 Healthcare & Medicine',
+                demand: 86,
+                growth: '+22% YoY',
+                trend: 'up',
+                trendLabel: 'Rising',
+                description: 'Physical therapy helps people recover from injuries, manage chronic conditions, and improve their physical abilities. Physical therapists design exercise programs and use hands-on techniques to restore movement.',
+                skills: ['Exercise Science', 'Anatomy', 'Patient Care', 'Rehabilitation', 'Manual Therapy'],
+                salary: '$75,000 - $120,000',
+                learningTime: '4-6 years',
+                difficulty: 'Hard',
+                careerPaths: ['Physical Therapist', 'Sports Therapist', 'Rehabilitation Specialist']
+            },
+            {
+                id: 107,
+                name: 'Veterinary Medicine',
+                icon: '🐾',
+                category: 'healthcare',
+                categoryLabel: '🏥 Healthcare & Medicine',
+                demand: 78,
+                growth: '+14% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'Veterinary medicine focuses on the health and care of animals. Veterinarians diagnose and treat illnesses, perform surgeries, and provide preventive care for pets, livestock, and wildlife.',
+                skills: ['Animal Anatomy', 'Surgery', 'Diagnostics', 'Patient Care', 'Emergency Medicine'],
+                salary: '$90,000 - $160,000',
+                learningTime: '6-8 years',
+                difficulty: 'Hard',
+                careerPaths: ['Veterinarian', 'Veterinary Surgeon', 'Animal Health Researcher']
+            },
+            {
+                id: 108,
+                name: 'Nutrition & Dietetics',
+                icon: '🥗',
+                category: 'healthcare',
+                categoryLabel: '🏥 Healthcare & Medicine',
+                demand: 80,
+                growth: '+16% YoY',
+                trend: 'up',
+                trendLabel: 'Rising',
+                description: 'Nutrition and dietetics focuses on the relationship between food and health. Dietitians help people make informed food choices, manage chronic conditions, and achieve their health goals through proper nutrition.',
+                skills: ['Nutrition Science', 'Diet Planning', 'Patient Counseling', 'Food Safety', 'Health Education'],
+                salary: '$60,000 - $95,000',
+                learningTime: '4-5 years',
+                difficulty: 'Medium',
+                careerPaths: ['Dietitian', 'Nutritionist', 'Sports Nutritionist', 'Food Service Manager']
+            },
+
+            // Education
+            {
+                id: 201,
+                name: 'Teaching & Education',
+                icon: '📚',
+                category: 'education',
+                categoryLabel: '📚 Education & Teaching',
+                demand: 90,
+                growth: '+8% YoY',
+                trend: 'hot',
+                trendLabel: 'Essential',
+                description: 'Teaching is one of the most important professions. Educators shape the minds of future generations, inspire curiosity, and help students reach their full potential. Teachers work in schools, universities, and online platforms.',
+                skills: ['Classroom Management', 'Lesson Planning', 'Communication', 'Patience', 'Subject Expertise'],
+                salary: '$45,000 - $85,000',
+                learningTime: '2-4 years',
+                difficulty: 'Medium',
+                careerPaths: ['Teacher', 'Lecturer', 'Educational Consultant', 'Principal', 'Professor']
+            },
+            {
+                id: 202,
+                name: 'Curriculum Development',
+                icon: '📝',
+                category: 'education',
+                categoryLabel: '📚 Education & Teaching',
+                demand: 75,
+                growth: '+10% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'Curriculum developers design educational materials and programs that help students learn effectively. They research best practices, align content with standards, and create engaging learning experiences.',
+                skills: ['Instructional Design', 'Educational Research', 'Content Development', 'Assessment Design'],
+                salary: '$55,000 - $90,000',
+                learningTime: '2-3 years',
+                difficulty: 'Medium',
+                careerPaths: ['Curriculum Developer', 'Instructional Designer', 'Educational Content Creator']
+            },
+            {
+                id: 203,
+                name: 'Special Education',
+                icon: '🌟',
+                category: 'education',
+                categoryLabel: '📚 Education & Teaching',
+                demand: 82,
+                growth: '+12% YoY',
+                trend: 'up',
+                trendLabel: 'Rising',
+                description: 'Special education teachers work with students who have learning, physical, or emotional disabilities. They create individualized education plans and use specialized teaching methods to help all students succeed.',
+                skills: ['Individualized Instruction', 'Behavior Management', 'Inclusion Strategies', 'Assessment'],
+                salary: '$50,000 - $80,000',
+                learningTime: '2-4 years',
+                difficulty: 'Hard',
+                careerPaths: ['Special Education Teacher', 'Learning Specialist', 'Inclusion Coordinator']
+            },
+            {
+                id: 204,
+                name: 'Educational Counseling',
+                icon: '🎯',
+                category: 'education',
+                categoryLabel: '📚 Education & Teaching',
+                demand: 76,
+                growth: '+9% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Educational counselors help students with academic and career planning. They provide guidance on course selection, college applications, and career paths, helping students make informed decisions about their future.',
+                skills: ['Counseling', 'Career Guidance', 'Academic Planning', 'College Admissions', 'Communication'],
+                salary: '$50,000 - $75,000',
+                learningTime: '2-3 years',
+                difficulty: 'Medium',
+                careerPaths: ['School Counselor', 'Academic Advisor', 'Career Counselor', 'College Admissions Counselor']
+            },
+
+            // Business
+            {
+                id: 301,
+                name: 'Business Administration',
+                icon: '💼',
+                category: 'business',
+                categoryLabel: '💼 Business & Finance',
+                demand: 92,
+                growth: '+6% YoY',
+                trend: 'hot',
+                trendLabel: 'Essential',
+                description: 'Business administration is the management of business operations and decision-making. Business administrators oversee teams, manage resources, and develop strategies to help organizations achieve their goals.',
+                skills: ['Leadership', 'Strategic Planning', 'Financial Management', 'Operations', 'Communication'],
+                salary: '$80,000 - $160,000',
+                learningTime: '2-4 years',
+                difficulty: 'Medium',
+                careerPaths: ['Business Manager', 'Operations Manager', 'CEO', 'Consultant']
+            },
+            {
+                id: 302,
+                name: 'Finance & Accounting',
+                icon: '💰',
+                category: 'business',
+                categoryLabel: '💼 Business & Finance',
+                demand: 88,
+                growth: '+7% YoY',
+                trend: 'hot',
+                trendLabel: 'High Demand',
+                description: 'Finance and accounting professionals manage money, investments, and financial records. They help organizations make sound financial decisions, ensure compliance with regulations, and maximize profitability.',
+                skills: ['Financial Analysis', 'Accounting', 'Investment', 'Budgeting', 'Risk Management', 'Excel'],
+                salary: '$70,000 - $150,000',
+                learningTime: '2-4 years',
+                difficulty: 'Medium-Hard',
+                careerPaths: ['Accountant', 'Financial Analyst', 'Investment Banker', 'CFO']
+            },
+            {
+                id: 303,
+                name: 'Marketing & Brand Management',
+                icon: '📢',
+                category: 'business',
+                categoryLabel: '💼 Business & Finance',
+                demand: 85,
+                growth: '+14% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'Marketing professionals build brand awareness, create campaigns, and connect products with customers. Brand managers ensure a consistent brand identity and develop strategies to grow market share.',
+                skills: ['Branding', 'Digital Marketing', 'Campaign Management', 'Content Strategy', 'Analytics'],
+                salary: '$65,000 - $130,000',
+                learningTime: '2-3 years',
+                difficulty: 'Medium',
+                careerPaths: ['Marketing Manager', 'Brand Strategist', 'Content Marketing Manager', 'Digital Marketing Specialist']
+            },
+            {
+                id: 304,
+                name: 'Human Resources',
+                icon: '👥',
+                category: 'business',
+                categoryLabel: '💼 Business & Finance',
+                demand: 80,
+                growth: '+8% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Human resources professionals manage the relationship between employees and organizations. They handle recruitment, training, benefits, and employee relations, creating a positive workplace culture.',
+                skills: ['Recruitment', 'Employee Relations', 'Training', 'HR Policies', 'Communication'],
+                salary: '$60,000 - $110,000',
+                learningTime: '2-3 years',
+                difficulty: 'Medium',
+                careerPaths: ['HR Manager', 'HR Specialist', 'Talent Acquisition Manager', 'HR Business Partner']
+            },
+            {
+                id: 305,
+                name: 'Entrepreneurship',
+                icon: '🚀',
+                category: 'business',
+                categoryLabel: '💼 Business & Finance',
+                demand: 78,
+                growth: '+20% YoY',
+                trend: 'new',
+                trendLabel: 'Booming',
+                description: 'Entrepreneurship is the process of starting and running a business. Entrepreneurs identify opportunities, take risks, and build companies from the ground up. It requires creativity, resilience, and business acumen.',
+                skills: ['Business Planning', 'Innovation', 'Leadership', 'Financial Management', 'Marketing', 'Sales'],
+                salary: '$50,000 - $500,000+',
+                learningTime: '2-5 years',
+                difficulty: 'Hard',
+                careerPaths: ['Entrepreneur', 'Startup Founder', 'Small Business Owner', 'Franchise Owner']
+            },
+
+            // Arts & Media
+            {
+                id: 401,
+                name: 'Graphic Design',
+                icon: '🎨',
+                category: 'arts',
+                categoryLabel: '🎨 Arts & Media',
+                demand: 82,
+                growth: '+10% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Graphic design is the art of visual communication. Graphic designers create designs for websites, print materials, logos, and advertisements, using creativity and technical skills to convey messages effectively.',
+                skills: ['Adobe Suite', 'Typography', 'Color Theory', 'Creative Thinking', 'Branding', 'Figma'],
+                salary: '$50,000 - $95,000',
+                learningTime: '1-2 years',
+                difficulty: 'Medium',
+                careerPaths: ['Graphic Designer', 'Brand Designer', 'Art Director', 'Creative Director']
+            },
+            {
+                id: 402,
+                name: 'Content Writing & Copywriting',
+                icon: '✍️',
+                category: 'arts',
+                categoryLabel: '🎨 Arts & Media',
+                demand: 84,
+                growth: '+15% YoY',
+                trend: 'up',
+                trendLabel: 'Rising',
+                description: 'Content writing and copywriting involve creating written content for websites, blogs, social media, advertising, and marketing materials. Good writers are in high demand for their ability to tell compelling stories.',
+                skills: ['Writing', 'Storytelling', 'SEO', 'Research', 'Editing', 'Creativity'],
+                salary: '$45,000 - $85,000',
+                learningTime: '1-2 years',
+                difficulty: 'Medium',
+                careerPaths: ['Content Writer', 'Copywriter', 'SEO Content Specialist', 'Blogger']
+            },
+            {
+                id: 403,
+                name: 'Photography & Videography',
+                icon: '📸',
+                category: 'arts',
+                categoryLabel: '🎨 Arts & Media',
+                demand: 76,
+                growth: '+8% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Photography and videography are the art of capturing and telling stories through images and video. Photographers and videographers work in diverse fields including advertising, events, film, and journalism.',
+                skills: ['Camera Operation', 'Lighting', 'Composition', 'Editing', 'Color Grading', 'Storytelling'],
+                salary: '$40,000 - $90,000',
+                learningTime: '1-3 years',
+                difficulty: 'Medium',
+                careerPaths: ['Photographer', 'Videographer', 'Film Director', 'Editor']
+            },
+            {
+                id: 404,
+                name: 'Music Production',
+                icon: '🎵',
+                category: 'arts',
+                categoryLabel: '🎨 Arts & Media',
+                demand: 70,
+                growth: '+12% YoY',
+                trend: 'new',
+                trendLabel: 'Emerging',
+                description: 'Music production involves creating, recording, and producing music. Music producers work with artists, mix and master tracks, and shape the sound of recorded music across various genres.',
+                skills: ['Audio Engineering', 'Music Theory', 'Mixing', 'Mastering', 'Production Software'],
+                salary: '$40,000 - $120,000',
+                learningTime: '2-4 years',
+                difficulty: 'Hard',
+                careerPaths: ['Music Producer', 'Audio Engineer', 'Sound Designer', 'Composer']
+            },
+            {
+                id: 405,
+                name: 'Film & Video Editing',
+                icon: '🎬',
+                category: 'arts',
+                categoryLabel: '🎨 Arts & Media',
+                demand: 78,
+                growth: '+11% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'Film and video editing is the process of assembling raw footage into a polished final product. Editors shape the narrative, add effects, and create the final visual experience for films, TV shows, and online content.',
+                skills: ['Video Editing', 'Storytelling', 'Color Grading', 'Sound Design', 'VFX', 'DaVinci Resolve'],
+                salary: '$50,000 - $100,000',
+                learningTime: '2-3 years',
+                difficulty: 'Medium',
+                careerPaths: ['Video Editor', 'Film Editor', 'Post-Production Supervisor', 'Content Creator']
+            },
+
+            // Science
+            {
+                id: 501,
+                name: 'Biology & Life Sciences',
+                icon: '🧬',
+                category: 'science',
+                categoryLabel: '🔬 Science & Research',
+                demand: 80,
+                growth: '+10% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Biology is the study of life and living organisms. Life sciences professionals work in research, healthcare, environmental protection, and biotechnology, advancing our understanding of the natural world.',
+                skills: ['Research', 'Microscopy', 'Data Analysis', 'Laboratory Skills', 'Genetics', 'Evolution'],
+                salary: '$55,000 - $120,000',
+                learningTime: '4-6 years',
+                difficulty: 'Hard',
+                careerPaths: ['Biologist', 'Research Scientist', 'Microbiologist', 'Geneticist']
+            },
+            {
+                id: 502,
+                name: 'Chemistry',
+                icon: '🧪',
+                category: 'science',
+                categoryLabel: '🔬 Science & Research',
+                demand: 78,
+                growth: '+6% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Chemistry is the study of matter and the changes it undergoes. Chemists work in pharmaceuticals, materials science, environmental testing, and many other fields, developing new substances and understanding chemical reactions.',
+                skills: ['Analytical Chemistry', 'Laboratory Skills', 'Research', 'Data Analysis', 'Safety Protocols'],
+                salary: '$55,000 - $115,000',
+                learningTime: '4-6 years',
+                difficulty: 'Hard',
+                careerPaths: ['Chemist', 'Analytical Chemist', 'Chemical Researcher', 'Pharmaceutical Scientist']
+            },
+            {
+                id: 503,
+                name: 'Physics',
+                icon: '⚛️',
+                category: 'science',
+                categoryLabel: '🔬 Science & Research',
+                demand: 72,
+                growth: '+5% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Physics is the study of matter, energy, and the fundamental laws of the universe. Physicists explore everything from subatomic particles to galaxies, pushing the boundaries of human knowledge.',
+                skills: ['Mathematics', 'Data Analysis', 'Research', 'Problem Solving', 'Theoretical Modeling'],
+                salary: '$60,000 - $130,000',
+                learningTime: '6-8 years',
+                difficulty: 'Very Hard',
+                careerPaths: ['Physicist', 'Research Scientist', 'Data Scientist', 'Astronomer']
+            },
+            {
+                id: 504,
+                name: 'Environmental Science',
+                icon: '🌍',
+                category: 'science',
+                categoryLabel: '🔬 Science & Research',
+                demand: 84,
+                growth: '+18% YoY',
+                trend: 'hot',
+                trendLabel: 'Rising',
+                description: 'Environmental science addresses environmental challenges including climate change, pollution, and conservation. Environmental scientists work to protect the planet and create sustainable solutions for the future.',
+                skills: ['Ecology', 'Research', 'Data Analysis', 'Environmental Policy', 'Conservation', 'Fieldwork'],
+                salary: '$50,000 - $100,000',
+                learningTime: '4-6 years',
+                difficulty: 'Medium-Hard',
+                careerPaths: ['Environmental Scientist', 'Conservationist', 'Climate Analyst', 'Sustainability Consultant']
+            },
+            {
+                id: 505,
+                name: 'Forensic Science',
+                icon: '🔍',
+                category: 'science',
+                categoryLabel: '🔬 Science & Research',
+                demand: 76,
+                growth: '+12% YoY',
+                trend: 'up',
+                trendLabel: 'Growing',
+                description: 'Forensic science applies scientific methods to criminal investigations. Forensic scientists analyze evidence from crime scenes, including DNA, fingerprints, and digital data, to help solve crimes.',
+                skills: ['Evidence Analysis', 'DNA Testing', 'Criminalistics', 'Laboratory Skills', 'Attention to Detail'],
+                salary: '$50,000 - $95,000',
+                learningTime: '4-6 years',
+                difficulty: 'Hard',
+                careerPaths: ['Forensic Scientist', 'Crime Scene Investigator', 'Forensic Analyst', 'Evidence Technician']
+            },
+
+            // Engineering
+            {
+                id: 601,
+                name: 'Civil Engineering',
+                icon: '🏗️',
+                category: 'engineering',
+                categoryLabel: '⚙️ Engineering & Construction',
+                demand: 85,
+                growth: '+8% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Civil engineering designs and builds infrastructure including roads, bridges, buildings, and water systems. Civil engineers shape the physical world around us, creating safe and sustainable structures.',
+                skills: ['Structural Design', 'AutoCAD', 'Construction Management', 'Surveying', 'Materials Science'],
+                salary: '$65,000 - $125,000',
+                learningTime: '4-5 years',
+                difficulty: 'Hard',
+                careerPaths: ['Civil Engineer', 'Structural Engineer', 'Construction Manager', 'Geotechnical Engineer']
+            },
+            {
+                id: 602,
+                name: 'Mechanical Engineering',
+                icon: '⚙️',
+                category: 'engineering',
+                categoryLabel: '⚙️ Engineering & Construction',
+                demand: 83,
+                growth: '+7% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Mechanical engineering designs and develops mechanical systems, from engines to robots. Mechanical engineers work in manufacturing, automotive, aerospace, and many other industries, creating mechanical solutions.',
+                skills: ['CAD', 'Thermodynamics', 'Materials Science', 'Manufacturing', 'Mechanics', 'Fluid Dynamics'],
+                salary: '$65,000 - $125,000',
+                learningTime: '4-5 years',
+                difficulty: 'Hard',
+                careerPaths: ['Mechanical Engineer', 'Design Engineer', 'Manufacturing Engineer', 'Automotive Engineer']
+            },
+            {
+                id: 603,
+                name: 'Electrical Engineering',
+                icon: '💡',
+                category: 'engineering',
+                categoryLabel: '⚙️ Engineering & Construction',
+                demand: 84,
+                growth: '+9% YoY',
+                trend: 'up',
+                trendLabel: 'Rising',
+                description: 'Electrical engineering deals with electricity, electronics, and electromagnetism. Electrical engineers design power systems, communication networks, and electronic devices that power modern life.',
+                skills: ['Circuit Design', 'Electronics', 'Power Systems', 'Signal Processing', 'Microcontrollers'],
+                salary: '$65,000 - $125,000',
+                learningTime: '4-5 years',
+                difficulty: 'Hard',
+                careerPaths: ['Electrical Engineer', 'Power Engineer', 'Communications Engineer', 'Control Systems Engineer']
+            },
+            {
+                id: 604,
+                name: 'Aerospace Engineering',
+                icon: '✈️',
+                category: 'engineering',
+                categoryLabel: '⚙️ Engineering & Construction',
+                demand: 78,
+                growth: '+6% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Aerospace engineering designs aircraft and spacecraft. Aerospace engineers work on the cutting edge of technology, developing systems that fly through the atmosphere and explore space.',
+                skills: ['Aerodynamics', 'Propulsion', 'Materials Science', 'Control Systems', 'Structural Analysis'],
+                salary: '$70,000 - $140,000',
+                learningTime: '4-6 years',
+                difficulty: 'Hard',
+                careerPaths: ['Aerospace Engineer', 'Aircraft Designer', 'Spacecraft Engineer', 'Propulsion Engineer']
+            },
+            {
+                id: 605,
+                name: 'Architecture',
+                icon: '🏛️',
+                category: 'engineering',
+                categoryLabel: '⚙️ Engineering & Construction',
+                demand: 80,
+                growth: '+5% YoY',
+                trend: 'up',
+                trendLabel: 'Steady',
+                description: 'Architecture is the art and science of designing buildings and structures. Architects combine creativity with technical knowledge to design spaces that are functional, safe, and aesthetically pleasing.',
+                skills: ['Design', 'CAD', 'Construction', 'Space Planning', 'Building Materials', 'Sustainability'],
+                salary: '$60,000 - $120,000',
+                learningTime: '5-7 years',
+                difficulty: 'Hard',
+                careerPaths: ['Architect', 'Design Architect', 'Project Architect', 'Urban Planner']
+            }
+        ];
+
+        // ── Render Skills ──
+        let activeFilter = 'all';
+
+        function renderSkills() {
+            const container = document.getElementById('skillsContainer');
+            const search = document.getElementById('skillSearch').value.toLowerCase().trim();
+
+            // Group skills by category
+            const categories = {
+                ai: '🤖 Artificial Intelligence & Data',
+                web: '🌐 Web Development',
+                mobile: '📱 Mobile Development',
+                cloud: '☁️ Cloud Computing & DevOps',
+                design: '🎨 Design & Creative',
+                security: '🔒 Cybersecurity',
+                emerging: '🚀 Emerging & Future Tech',
+                healthcare: '🏥 Healthcare & Medicine',
+                education: '📚 Education & Teaching',
+                business: '💼 Business & Finance',
+                arts: '🎨 Arts & Media',
+                science: '🔬 Science & Research',
+                engineering: '⚙️ Engineering & Construction'
+            };
+
+            let visibleCount = 0;
+            let html = '';
+
+            for (const [catKey, catLabel] of Object.entries(categories)) {
+                const skills = skillsData.filter(s => {
+                    const matchesFilter = activeFilter === 'all' || s.category === activeFilter;
+                    const matchesSearch = search === '' || s.name.toLowerCase().includes(search) || s.description.toLowerCase().includes(search);
+                    return s.category === catKey && matchesFilter && matchesSearch;
+                });
+
+                if (skills.length === 0) continue;
+
+                html += `<div class="skills-category-label" data-category="${catKey}">${catLabel}</div>`;
+                html += `<div class="skills-grid" id="grid-${catKey}">`;
+
+                skills.forEach(skill => {
+                    visibleCount++;
+                    const trendClass = skill.trend === 'hot' ? 'trend-hot' :
+                        skill.trend === 'up' ? 'trend-up' : 'trend-new';
+                    const trendIcon = skill.trend === 'hot' ? '🔥' :
+                        skill.trend === 'up' ? '📈' : '⭐';
+
+                    html += `
+                        <div class="skill-card" data-category="${skill.category}" onclick="openModal(${skill.id})">
+                            <div class="skill-icon-row">
+                                <div class="skill-icon" style="background:var(--purple-pale);">${skill.icon}</div>
+                                <div class="skill-trend ${trendClass}">${trendIcon} ${skill.trendLabel}</div>
+                            </div>
+                            <div class="skill-name">${skill.name}</div>
+                            <div class="skill-category">${skill.skills.slice(0, 3).join(' · ')}</div>
+                            <div class="skill-demand-bar">
+                                <div class="skill-demand-fill" style="width:${skill.demand}%;"></div>
+                            </div>
+                            <div class="skill-meta"><span>Demand: ${skill.demand}%</span><span>${skill.growth}</span></div>
+                        </div>
+                    `;
+                });
+
+                html += `</div>`;
+            }
+
+            container.innerHTML = html;
+
+            document.getElementById('visibleCount').textContent = visibleCount;
+            document.getElementById('noResults').style.display = visibleCount === 0 ? '' : 'none';
+
+            // Show/hide category labels based on visible skills
+            document.querySelectorAll('.skills-category-label').forEach(label => {
+                const cat = label.dataset.category;
+                const grid = document.getElementById(`grid-${cat}`);
+                if (grid) {
+                    label.style.display = grid.children.length > 0 ? '' : 'none';
+                }
+            });
+        }
+
+        // ── Filter & Search ──
+        function setFilter(btn, cat) {
+            document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            activeFilter = cat;
+            renderSkills();
+        }
+
+        function filterSkills() {
+            renderSkills();
+        }
+
+        // ── Modal Functions ──
+        function openModal(id) {
+            const skill = skillsData.find(s => s.id === id);
+            if (!skill) return;
+
+            const modal = document.getElementById('skillModal');
+            const body = document.getElementById('modalBody');
+
+            const trendClass = skill.trend === 'hot' ? 'hot' :
+                skill.trend === 'up' ? 'rising' : 'emerging';
+            const trendIcon = skill.trend === 'hot' ? '🔥' :
+                skill.trend === 'up' ? '📈' : '⭐';
+
+            body.innerHTML = `
+                <div class="modal-icon">${skill.icon}</div>
+                <div class="modal-title">${skill.name}</div>
+                <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.6rem;">
+                    <span class="modal-category">${skill.categoryLabel}</span>
+                    <span class="modal-trend-badge ${trendClass}">${trendIcon} ${skill.trendLabel}</span>
+                </div>
+                <p class="modal-desc">${skill.description}</p>
+
+                <div class="modal-detail-grid">
+                    <div class="modal-detail-item">
+                        <div class="label">💰 Average Salary</div>
+                        <div class="value">${skill.salary}</div>
+                    </div>
+                    <div class="modal-detail-item">
+                        <div class="label">📊 Demand Rate</div>
+                        <div class="value">${skill.demand}%</div>
+                    </div>
+                    <div class="modal-detail-item">
+                        <div class="label">⏱️ Learning Time</div>
+                        <div class="value">${skill.learningTime}</div>
+                    </div>
+                    <div class="modal-detail-item">
+                        <div class="label">⚡ Difficulty</div>
+                        <div class="value">${skill.difficulty}</div>
+                    </div>
+                    <div class="modal-detail-item" style="grid-column: span 2;">
+                        <div class="label">📈 Career Growth</div>
+                        <div class="value">${skill.growth}</div>
+                    </div>
+                </div>
+
+                <div class="modal-tags">
+                    ${skill.skills.map(s => `<span class="modal-tag">${s}</span>`).join('')}
+                </div>
+
+                <div class="modal-actions">
+                    <a href="Roadmap.html" class="modal-btn modal-btn-primary">
+                        <i class="fas fa-road"></i> Build Roadmap
+                    </a>
+                    <button class="modal-btn modal-btn-secondary" onclick="closeModal()">
+                        Close
+                    </button>
+                </div>
+            `;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('skillModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on overlay click
+        document.getElementById('skillModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // ── Init ──
+        document.addEventListener('DOMContentLoaded', function() {
+            renderSkills();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+# Local configuration and secrets
+.env
+.env.*
+config/database.local.php
+config/database.private.php
+*.log
+contact_log.txt
+
+# Local/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
